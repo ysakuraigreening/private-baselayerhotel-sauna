@@ -48,34 +48,48 @@ export default function Home() {
     {
       step: "01",
       title: "来店",
+      description:
+        "BASE LAYER HOTELのフロントにお越しください。スタッフが丁寧にご案内いたします。ご予約の確認をさせていただきます。",
     },
     {
       step: "02",
       title: "ICチップ付下足キーを取り下足箱に靴を入れる",
+      description:
+        "フロントでICチップ付きの下足キーをお受け取りください。このキーで靴を下足箱に保管し、施設内でのすべての操作が可能になります。",
     },
     {
       step: "03",
       title: "そのキーを使用してゲート入館",
+      description: "ICチップをゲートにタッチして施設内にお入りください。キーが認証されると自動でゲートが開きます。",
     },
     {
       step: "04",
       title: "同じ番号のロッカーを使用",
+      description:
+        "下足キーと同じ番号のロッカーをご利用ください。お荷物を安全に保管できます。サウナウェアに着替えてご準備ください。",
     },
     {
       step: "05",
       title: "サウナ堪能",
+      description:
+        "いよいよサウナタイム！HARVIA製ストーブの心地よい熱波と、水風呂、整いスペースで至福のひとときをお過ごしください。",
     },
     {
       step: "06",
       title: "ICチップを利用して精算機で精算",
+      description:
+        "ご利用後は精算機にICチップをタッチして料金をお支払いください。クレジットカードや電子マネーもご利用いただけます。",
     },
     {
       step: "07",
       title: "ゲートでスキャンして退館",
+      description: "精算完了後、再度ゲートでICチップをスキャンして施設から退館してください。お疲れさまでした。",
     },
     {
       step: "08",
       title: "下足箱で靴を取って退店",
+      description:
+        "下足箱から靴をお取りいただき、ICチップキーをフロントにご返却ください。またのご利用をお待ちしております。",
     },
   ]
 
@@ -475,12 +489,12 @@ export default function Home() {
               />
             </div>
 
+            <SaunaDetailsEnhanced features={saunaFeatures} details={saunaDetails} />
+
             {/* Usage Flow Section */}
             <div className="mb-20">
               <UsageFlow steps={usageSteps} />
             </div>
-
-            <SaunaDetailsEnhanced features={saunaFeatures} details={saunaDetails} />
           </div>
         </section>
 
