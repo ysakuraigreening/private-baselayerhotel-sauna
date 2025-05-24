@@ -188,8 +188,6 @@ body {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/placeholder.svg?height=1080&width=1920&text=Hero+Background");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -651,10 +649,21 @@ body {
 }
 
 .step-description {
-  max-height: 200px; /* 初期状態で表示 */
+  max-height: 0; /* 初期状態は閉じた状態 */
   overflow: hidden;
   transition: max-height 0.7s ease, opacity 0.7s ease;
-  opacity: 1; /* 初期状態で表示 */
+  opacity: 0; /* 初期状態は非表示 */
+}
+
+.step-item.active .step-description {
+  max-height: 300px; /* アクティブ時に開く */
+  opacity: 1;
+}
+
+/* 最初の3つのステップは初期表示 */
+.step-item:nth-child(-n + 3) .step-description {
+  max-height: 300px;
+  opacity: 1;
 }
 
 .step-description p {

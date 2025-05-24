@@ -25,11 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
       item.style.transform = "translateY(0)"
     })
 
-    // ステップアイテムを即座に表示
+    // 最初の3つのステップを表示
     const stepItems = document.querySelectorAll(".step-item")
-    stepItems.forEach((step) => {
+    stepItems.forEach((step, index) => {
       step.style.opacity = "1"
       step.style.transform = "translateX(0)"
+
+      // 最初の3つのステップをアクティブにする
+      if (index < 3) {
+        step.classList.add("active")
+      }
     })
 
     // Enjoyステップを即座に表示
@@ -165,29 +170,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Reservation timeline animation - シンプル版
-  const timelineProgress = document.querySelector(".timeline-progress")
+  // Reservation timeline animation - 改善版
   const stepItems = document.querySelectorAll(".step-item")
+  const timelineProgress = document.querySelector(".timeline-progress")
 
   function updateTimeline() {
     const windowHeight = window.innerHeight
     const centerY = windowHeight / 2
+
+    let activeStepIndex = -1
+    let closestDistance = Number.POSITIVE_INFINITY
 
     stepItems.forEach((step, index) => {
       const rect = step.getBoundingClientRect()
       const stepCenterY = rect.top + rect.height / 2
       const distance = Math.abs(stepCenterY - centerY)
 
-      // Remove active class from all steps
-      step.classList.remove("active")
-
-      // Check if step is in viewport and close to center
-      if (rect.top < windowHeight && rect.bottom > 0 && distance < windowHeight * 0.5) {
-        step.classList.add("active")
+      // ステップが画面内にある場合
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        if (distance < closestDistance) {
+          closestDistance = distance
+          activeStepIndex = index
+        }
       }
     })
 
-    // Update timeline progress
+    // すべてのステップからactiveクラスを削除
+    stepItems.forEach((step) => {
+      step.classList.remove("active")
+    })
+
+    // 最も近いステップをアクティブにする（距離が適切な場合）
+    if (activeStepIndex !== -1 && closestDistance < windowHeight * 0.4) {
+      stepItems[activeStepIndex].classList.add("active")
+    } else {
+      // デフォルトで最初の3つを表示
+      stepItems.forEach((step, index) => {
+        if (index < 3) {
+          step.classList.add("active")
+        }
+      })
+    }
+
+    // タイムラインプログレスの更新
     const reservationSection = document.querySelector("#reservation")
     if (reservationSection && timelineProgress) {
       const sectionRect = reservationSection.getBoundingClientRect()
