@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAUNA ROOM (BASE LAYER HOTEL)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-bg: #1a1a1a;
+      --secondary-bg: #2a2a2a;
+      --text-color: #ffffff;
+      --text-light: #cccccc;
+      --text-lighter: #999999;
+      --accent-color: #2d5a4a;
+      --accent-hover: #1e3d2f;
+      --border-color: #444444;
+      --container-width: 1200px;
+      --header-height: 80px;
+      --section-spacing: 120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Helvetica Now', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--primary-bg);
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    ul {
+      list-style-position: inside;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.3s ease;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    .en {
+      font-family: 'Helvetica Now', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .jp {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #000000;
+      padding: 20px 0;
+    }
+
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #fff;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    .main-nav {
+      display: none;
+    }
+
+    .nav-link {
+      color: var(--text-light);
+      font-size: 14px;
+      margin-left: 30px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .language-selector {
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: var(--text-lighter);
+      cursor: pointer;
+      transition: color 0.3s ease;
+      font-weight: 300;
+    }
+
+    .lang-btn:hover, .lang-btn.active {
+      color: #fff;
+    }
+
+    .lang-separator {
+      color: var(--text-lighter);
+      margin: 0 8px;
+    }
+
+    /* Floating Reservation */
+    .floating-reservation {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 900;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .floating-reservation.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reservation-btn {
+      display: inline-block;
+      background-color: #000000;
+      color: #fff;
+      padding: 16px 24px;
+      font-family: 'Helvetica Now', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .reservation-btn:hover {
+      background-color: #333333;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/placeholder.svg?height=1080&width=1920&query=modern sauna room dark');
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 60px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 8px;
+      font-family: 'Helvetica Now', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-text h2 {
+      font-size: 24px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+      font-family: 'Helvetica Now', sans-serif;
+    }
+
+    .hero-text .tagline {
+      font-size: 24px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+      font-family: 'Helvetica Now', sans-serif;
+    }
+
+    .hero-text .description {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 48px;
+      font-family: 'Helvetica Now', sans-serif;
+    }
+
+    /* Section Styles */
+    section {
+      padding: var(--section-spacing) 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 300;
+      margin-bottom: 16px;
+      font-family: 'Helvetica Now', sans-serif;
+      color: var(--text-color);
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 1px;
+      background-color: var(--accent-color);
+      margin: 0 auto;
+    }
+
+    /* Sauna Section */
+    .sauna {
+      background-color: var(--secondary-bg);
+    }
+
+    .sauna-concept {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .sauna-concept h3 {
+      font-size: 30px;
+      font-weight: 300;
+      margin-bottom: 40px;
+      color: var(--text-color);
+    }
+
+    .sauna-concept-text {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--primary-bg);
+      padding: 24px;
+      border: 1px solid var(--border-color);
+    }
+
+    .feature-image {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-item h3 {
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 16px;
+      color: var(--text-color);
+    }
+
+    .feature-item p {
+      color: var(--text-light);
+    }
+
+    /* Sauna Details */
+    .sauna-details {
+      background-color: var(--primary-bg);
+      padding: 32px;
+      border: 1px solid var(--border-color);
+    }
+
+    .sauna-details h3 {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 32px;
+      color: var(--text-color);
+    }
+
+    /* タブスタイル */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 30px;
+    }
+
+    .tab-button {
+      padding: 12px 24px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      margin-right: 8px;
+    }
+
+    .tab-button:hover {
+      color: var(--text-color);
+    }
+
+    .tab-button.active {
+      color: var(--text-color);
+      border-bottom: 2px solid var(--accent-color);
+    }
+
+    /* タブコンテンツ */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .detail-item {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+    }
+
+    .detail-item h4 {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      color: var(--text-color);
+    }
+
+    .detail-content {
+      color: var(--text-light);
+    }
+
+    .detail-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .detail-content li {
+      margin-bottom: 4px;
+    }
+
+    /* Price Table */
+    .price-table h4 {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 16px;
+      color: var(--text-color);
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .price-column table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .price-column th, .price-column td {
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-light);
+    }
+
+    .price-column th {
+      font-weight: 300;
+      border-bottom: 1px solid var(--accent-color);
+      color: var(--text-color);
+    }
+
+    /* Enjoy Section */
+    .enjoy {
+      background-color: var(--primary-bg);
+    }
+
+    /* Linear Enjoy Sauna */
+    .linear-enjoy-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .enjoy-steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 80px;
+      position: relative;
+    }
+
+    .enjoy-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .enjoy-step-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin-bottom: 24px;
+    }
+
+    .enjoy-step-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .enjoy-step-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+    }
+
+    .enjoy-step-number {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      font-family: 'Helvetica Now', sans-serif;
+      color: var(--accent-color);
+    }
+
+    .enjoy-step-title {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
+
+    .enjoy-step-content p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--text-light);
+    }
+
+    /* Gallery Section */
+    .gallery {
+      background-color: var(--secondary-bg);
+    }
+
+    .modern-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background-color: var(--primary-bg);
+    }
+
+    .gallery-item.large {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    .gallery-item.medium {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      color: white;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-number {
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      opacity: 0.8;
+      color: var(--accent-color);
+    }
+
+    .gallery-title {
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-description {
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-title {
+      transform: translateY(-8px);
+    }
+
+    .gallery-item:hover .gallery-description {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 100px;
+    }
+
+    /* FAQ Section */
+    .faq {
+      background-color: var(--primary-bg);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 16px;
+      background-color: var(--secondary-bg);
+      padding: 16px;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      cursor: pointer;
+    }
+
+    .faq-question h3 {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-color);
+    }
+
+    .faq-icon {
+      font-size: 24px;
+      color: var(--text-light);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--accent-color);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 16px 0 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding-bottom: 16px;
+    }
+
+    .faq-answer p {
+      color: var(--text-light);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 64px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .footer-info h3, .footer-nav h3 {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 16px;
+      font-family: 'Helvetica Now', sans-serif;
+    }
+
+    .footer-info p {
+      font-size: 14px;
+      color: var(--text-lighter);
+      margin-bottom: 8px;
+      font-family: 'Helvetica Now', sans-serif;
+      font-weight: 300;
+    }
+
+    .footer-info .copyright {
+      font-size: 12px;
+      color: #666;
+      margin-top: 24px;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+    }
+
+    .footer-nav li {
+      margin-bottom: 8px;
+    }
+
+    .footer-nav a {
+      font-size: 14px;
+      color: var(--text-lighter);
+      font-family: 'Helvetica Now', sans-serif;
+      font-weight: 300;
+      transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-aos].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* スライドショーのスタイル */
+    .slideshow-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      height: 500px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+    
+    .slideshow-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    .slideshow-slide.active {
+      opacity: 1;
+    }
+    
+    .slideshow-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .slideshow-prev, .slideshow-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+    
+    .slideshow-prev:hover, .slideshow-next:hover {
+      background-color: #000000;
+    }
+    
+    .slideshow-dots {
+      position: absolute;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      z-index: 10;
+    }
+    
+    .slideshow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .slideshow-dot.active {
+      background-color: #000000;
+    }
+
+    /* メディアクエリ */
+    @media (min-width: 768px) {
+      .main-nav {
+        display: flex;
+      }
+      
+      .hero-text h1 {
+        font-size: 70px;
+      }
+      
+      .hero-text h2 {
+        font-size: 30px;
+      }
+      
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .price-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .enjoy-steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .modern-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .gallery-item.large {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .section-title {
+        font-size: 40px;
+      }
+      
+      .hero-text h1 {
+        font-size: 80px;
+      }
+      
+      .modern-gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="https://baselayerhotel.com/" class="logo">
+        <span class="logo-text">※BLH</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="https://baselayerhotel.com/#concept" class="nav-link">CONCEPT</a>
+        <a href="https://baselayerhotel.com/#rooms" class="nav-link">ROOMS</a>
+        <a href="https://baselayerhotel.com/#access" class="nav-link">ACCESS</a>
+        <a href="https://baselayerhotel.com/recruit" class="nav-link">RECRUIT</a>
+        <a href="https://baselayerhotel.com/#contact" class="nav-link">CONTACT</a>
+      </nav>
+
+      <div class="language-selector">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <span class="lang-separator">|</span>
+        <button class="lang-btn active" data-lang="jp">JP</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Reservation Button -->
+  <div class="floating-reservation" id="floatingReservation">
+    <a href="https://baselayerhotel.com/reservation" target="_blank" rel="noopener noreferrer" class="reservation-btn">
+      RESERVATION →
+    </a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-image">
+        <div class="overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-text fade-in">
+            <h1>SAUNA ROOM</h1>
+            <h2>(BASE LAYER HOTEL)</h2>
+            <p class="tagline">The Totonou Loop:</p>
+            <p class="description">
+              Sauna　→　Chill　→　Reset　→　Repeat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sauna Section -->
+    <section id="sauna" class="sauna">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">SAUNA</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="sauna-concept">
+          <h3>SAUNA ROOM(BASE LAYER HOTEL)</h3>
+          <p class="sauna-concept-text">
+            ご宿泊者様限定の完全予約制プライベートサウナルーム。<br><br>
+            オート＆セルフロウリュが楽しめるサウナと浴槽スペース<br><br>そして、ゆったりとした整いスペースも併設しています。<br><br>
+            オリジナルのサウナウェアやAthletiaのアメニティも付いてます。<br>
+          </p>
+        </div>
+        
+        <!-- スライドショー -->
+        <div class="slideshow-container">
+          <div class="slideshow-slide active">
+            <img src="/placeholder.svg?height=500&width=800&query=luxury sauna interior dark" alt="サウナルーム" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="/placeholder.svg?height=500&width=800&query=harvia sauna heater dark" alt="サウナヒーター" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="/placeholder.svg?height=500&width=800&query=sauna relaxation area dark" alt="整いスペース" loading="lazy">
+          </div>
+          
+          <div class="slideshow-prev">&lt;</div>
+          <div class="slideshow-next">&gt;</div>
+          
+          <div class="slideshow-dots">
+            <div class="slideshow-dot active"></div>
+            <div class="slideshow-dot"></div>
+            <div class="slideshow-dot"></div>
+          </div>
+        </div>
+        
+        <!-- 特徴 -->
+        <div class="features">
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="feature-image">
+              <img src="/placeholder.svg?height=240&width=400&query=sauna heater dark" alt="Harbiaサウナストーブ" loading="lazy">
+            </div>
+            <h3>Harbiaサウナストーブ</h3>
+            <p>フィンランド製の高品質Harbiaサウナヒーターを導入。均一で心地よい熱波（ロウリュ）が、本場さながらの体験を提供します。</p>
+          </div>
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-image">
+              <img src="/placeholder.svg?height=240&width=400&query=relaxation space dark" alt="整いスペース" loading="lazy">
+            </div>
+            <h3>整いスペース</h3>
+            <p>サウナと水風呂の間に設けられた専用の休憩スペース。ゆったりとした空間で「ととのい」を体感できます。</p>
+          </div>
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-image">
+              <img src="/placeholder.svg?height=240&width=400&query=private sauna dark" alt="滞在型サウナ" loading="lazy">
+            </div>
+            <h3>滞在型サウナ</h3>
+            <p>通常のサウナとは異なり、長時間滞在できる設計。サウナ、水風呂、休憩を自分のペースで繰り返し楽しめます。</p>
+          </div>
+        </div>
+
+        <!-- サウナ概要 -->
+        <div class="sauna-details" data-aos="fade-up">
+          <h3>サウナ概要</h3>
+          
+          <div class="tabs">
+            <button class="tab-button active" data-tab="basic-info">基本情報</button>
+            <button class="tab-button" data-tab="price">料金表</button>
+            <button class="tab-button" data-tab="set-contents">セット内容</button>
+          </div>
+          
+          <div id="basic-info" class="tab-content active">
+            <div class="details-grid">
+              <div class="detail-item">
+                <h4>ご利用方法</h4>
+                <div class="detail-content">完全事前予約制</div>
+              </div>
+              <div class="detail-item">
+                <h4>場所</h4>
+                <div class="detail-content">BASE LAYER HOTEL 2階</div>
+              </div>
+              <div class="detail-item">
+                <h4>ご利用人数</h4>
+                <div class="detail-content">最大2名様まで</div>
+              </div>
+              <div class="detail-item">
+                <h4>利用枠</h4>
+                <div class="detail-content">
+                  <ul>
+                    <li>7:00 - 9:30</li>
+                    <li>15:30 - 18:00</li>
+                    <li>19:00 - 21:30</li>
+                    <li>22:30 - 0:30</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="price" class="tab-content">
+            <div class="price-table">
+              <div class="price-grid">
+                <div class="price-column">
+                  <table>
+                    <thead>
+                      <tr><th colspan="3">平日</th></tr>
+                      <tr><th>営業時間</th><th>人数</th><th>料金</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td rowspan="2">7:00-10:00</td><td>1名</td><td>¥6,000</td></tr>
+                      <tr><td>2名</td><td>¥7,000</td></tr>
+                      <tr><td rowspan="2">15:30-18:00</td><td>1名</td><td>¥8,000</td></tr>
+                      <tr><td>2名</td><td>¥9,000</td></tr>
+                      <tr><td rowspan="2">19:00-21:30</td><td>1名</td><td>¥9,000</td></tr>
+                      <tr><td>2名</td><td>¥10,000</td></tr>
+                      <tr><td rowspan="2">22:30-01:00</td><td>1名</td><td>¥8,000</td></tr>
+                      <tr><td>2名</td><td>¥9,000</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="price-column">
+                  <table>
+                    <thead>
+                      <tr><th colspan="3">金・土</th></tr>
+                      <tr><th>営業時間</th><th>人数</th><th>料金</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td rowspan="2">7:00-10:00</td><td>1名</td><td>¥8,000</td></tr>
+                      <tr><td>2名</td><td>¥9,000</td></tr>
+                      <tr><td rowspan="2">15:30-18:00</td><td>1名</td><td>¥10,000</td></tr>
+                      <tr><td>2名</td><td>¥11,000</td></tr>
+                      <tr><td rowspan="2">19:00-21:30</td><td>1名</td><td>¥11,000</td></tr>
+                      <tr><td>2名</td><td>¥12,000</td></tr>
+                      <tr><td rowspan="2">22:30-01:00</td><td>1名</td><td>¥10,000</td></tr>
+                      <tr><td>2名</td><td>¥11,000</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="set-contents" class="tab-content">
+            <div class="detail-item">
+              <h4>セット内容</h4>
+              <div class="detail-content">
+                <ul>
+                  <li>タオル（バスタオル・フェイスタオル）</li>
+                  <li>Athletiaアメニティ一式</li>
+                  <li>ミネラルウォーター</li>
+                  <li>サウナハット</li>
+                </ul>
+              </div>
+            </div>
+            <p style="margin-top: 20px; color: var(--text-light);">
+              ※すべてのアイテムは無料でご利用いただけます。手ぶらでお越しいただいても快適にサウナをお楽しみいただけます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enjoy Section -->
+    <section id="enjoy" class="enjoy">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">サウナの楽しみ方</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="linear-enjoy-container">
+          <div class="enjoy-steps-grid">
+            <div class="enjoy-step" data-aos="fade-up" data-aos-delay="0">
+              <div class="enjoy-step-image">
+                <img src="/placeholder.svg?height=400&width=300&query=sauna heater steam dark" alt="Sauna" loading="lazy">
+                <div class="enjoy-step-overlay">
+                  <div class="enjoy-step-number">01</div>
+                  <h3 class="enjoy-step-title">Sauna</h3>
+                </div>
+              </div>
+              <div class="enjoy-step-content">
+                <p>HARVIA製のストーブがじんわりと体を温めます。体が温まったら、Athletiaのオイルが入ったロウリュ水で香りもお楽しみください。</p>
+              </div>
+            </div>
+            
+            <div class="enjoy-step" data-aos="fade-up" data-aos-delay="100">
+              <div class="enjoy-step-image">
+                <img src="/placeholder.svg?height=400&width=300&query=cold plunge pool dark" alt="Cold Bath" loading="lazy">
+                <div class="enjoy-step-overlay">
+                  <div class="enjoy-step-number">02</div>
+                  <h3 class="enjoy-step-title">Cold Bath</h3>
+                </div>
+              </div>
+              <div class="enjoy-step-content">
+                <p>体が十分に温まったら、水風呂コーナーへ。製氷機も設置していますので、氷入りのキンキンな水風呂にアレンジも可能です。</p>
+              </div>
+            </div>
+            
+            <div class="enjoy-step" data-aos="fade-up" data-aos-delay="200">
+              <div class="enjoy-step-image">
+                <img src="/placeholder.svg?height=400&width=300&query=relaxation chair dark" alt="Totonou" loading="lazy">
+                <div class="enjoy-step-overlay">
+                  <div class="enjoy-step-number">03</div>
+                  <h3 class="enjoy-step-title">Totonou</h3>
+                </div>
+              </div>
+              <div class="enjoy-step-content">
+                <p>水風呂のあとは整いスペースへ。足を広々と伸ばせるチェアと、冷蔵庫やテレビも完備。名古屋の街中とは思えない解放感をお楽しみください。</p>
+              </div>
+            </div>
+            
+            <div class="enjoy-step" data-aos="fade-up" data-aos-delay="300">
+              <div class="enjoy-step-image">
+                <img src="/placeholder.svg?height=400&width=300&query=sauna cycle repeat dark" alt="Repeat" loading="lazy">
+                <div class="enjoy-step-overlay">
+                  <div class="enjoy-step-number">04</div>
+                  <h3 class="enjoy-step-title">Repeat</h3>
+                </div>
+              </div>
+              <div class="enjoy-step-content">
+                <p>サウナ→水風呂→休憩のサイクルを繰り返すことで、より深いリラクゼーションを体験できます。自分のペースで何度でも繰り返しましょう。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">アメニティ</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="modern-gallery">
+          <div class="gallery-item large" data-aos="fade-up" data-aos-delay="0">
+            <img src="/saunaweare-image.png" alt="オリジナルサウナウェア" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-number">01</div>
+              <h3 class="gallery-title">オリジナルサウナウェア</h3>
+              <p class="gallery-description">オリジナルサウナウェアは、ユニセックスの半ズボンタイプのショーツとWomensブラトップ、サウナハットをご用意。軽素材で動きやすく、速乾性にも優れたウェアとなっており、サウナをご予約いただいたお客様はどなたでもご利用いただけます。</p>
+            </div>
+          </div>
+          <div class="gallery-item medium" data-aos="fade-up" data-aos-delay="100">
+            <img src="/placeholder.svg?height=400&width=400&query=premium towels dark" alt="FRUIT OF THE LOOMS オリジナルタオル" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-number">02</div>
+              <h3 class="gallery-title">FRUIT OF THE LOOMS オリジナルタオル</h3>
+              <p class="gallery-description">大人気のベーシックアパレル/アンダーウェアメーカーであるFRUIT OF THE LOOMSとのコラボレーションアイテムをサウナルームでもご利用いただけます。バスタオル・フェイスタオルともにご用意がございます。</p>
+            </div>
+          </div>
+          <div class="gallery-item small" data-aos="fade-up" data-aos-delay="200">
+            <img src="/placeholder.svg?height=400&width=400&query=athletia amenities dark" alt="Athletia アメニティ" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-number">03</div>
+              <h3 class="gallery-title">Athletia アメニティ</h3>
+              <p class="gallery-description">「balance your active / relaxing cycle」をコンセプトにスキンケア商品を展開するAthletiaのアメニティを、サウナルームではボディケアアイテムだけでなくスキンケアアイテム全般にわたり導入。サウナや街歩きなどのアクティブなアクティビティ後の、リフレッシュ＆乾燥ケアに最適なラインナップです。また一部のアイテムは、1階自販機コーナーにて販売も行っております。</p>
+            </div>
+          </div>
+          <div class="gallery-item medium" data-aos="fade-up" data-aos-delay="300">
+            <img src="/placeholder.svg?height=400&width=400&query=cado hair dryer dark" alt="Cado ドライヤー" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-number">04</div>
+              <h3 class="gallery-title">Cado ドライヤー</h3>
+              <p class="gallery-description">美しいフォルムやデザインだけでなく、その実用性も魅力のCadoアイテム。今回サウナルームにはバトン型のドライヤーを導入。パワフルな風量で、アフターサウナの準備時間もストレスフリーに。</p>
+            </div>
+          </div>
+          <div class="gallery-item small" data-aos="fade-up" data-aos-delay="400">
+            <img src="/placeholder.svg?height=400&width=400&query=sauna sandals dark" alt="TAW&TOE サウナサンダル" loading="lazy">
+            <div class="gallery-overlay">
+              <div class="gallery-number">05</div>
+              <h3 class="gallery-title">TAW&TOE サウナサンダル</h3>
+              <p class="gallery-description">韓国発祥のブランド「TAW&TOE (トーアンドトー) 」のサンダルは、ZEROVITY(ゼロビティ)素材を使用しており、厚いアウトソールとクッションで、足にかかる負担が少ないサウナにもピッタリのサンダル。ソフトな肌触りと軽さが快適なサウナ体験をサポートしてくれます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">よくある質問</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="faq-question">
+              <h3>予約はどのように行えばよいですか？</h3>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <p>ご予約はウェブサイトの予約フォーム、またはお電話にて承っております。ご利用の3日前までのご予約をおすすめしております。</p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question">
+              <h3>初めてのサウナですが大丈夫でしょうか？</h3>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <p>もちろんです。スタッフが丁寧にご案内いたしますので、初めての方でも安心してご利用いただけます。サウナの温度や時間など、お好みに合わせてアドバイスもさせていただきます。</p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question">
+              <h3>持ち物は何が必要ですか？</h3>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <p>手ぶらでお越しいただけます。タオル、サウナウェア、アメニティ類はすべてご用意しております。お好みのドリンクなどがございましたら、ご持参いただくことも可能です。</p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-question">
+              <h3>サウナの温度は調整できますか？</h3>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <p>はい、お客様のご希望に合わせて温度調整が可能です。ご予約時またはご利用開始時にスタッフにお申し付けください。</p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="faq-question">
+              <h3>キャンセルポリシーを教えてください</h3>
+              <div class="faq-icon">+</div>
+            </div>
+            <div class="faq-answer">
+              <p>ご予約日の2日前までのキャンセルは無料です。前日のキャンセルは料金の50%、当日のキャンセルは100%のキャンセル料が発生いたします。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-info">
+        <h3>BASE LAYER HOTEL</h3>
+        <p>〒460-0003</p>
+        <p>愛知県名古屋市中区錦1-2-3</p>
+        <p>TEL: 052-211-4618</p>
+        <p>EMAIL: info@baselayerhotel.com</p>
+        <p class="copyright">© 2024 BASE LAYER HOTEL All Rights Reserved.</p>
+      </div>
+      <div class="footer-nav">
+        <h3>NAVIGATION</h3>
+        <ul>
+          <li><a href="https://baselayerhotel.com/#concept">CONCEPT</a></li>
+          <li><a href="https://baselayerhotel.com/#rooms">ROOMS</a></li>
+          <li><a href="https://baselayerhotel.com/#access">ACCESS</a></li>
+          <li><a href="https://baselayerhotel.com/recruit">RECRUIT</a></li>
+          <li><a href="https://baselayerhotel.com/#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ヒーローセクションのフェードイン
+      const heroText = document.querySelector('.hero-text');
+      if (heroText) {
+        heroText.classList.add('visible');
+      }
+      
+      // フローティング予約ボタン
+      const floatingReservation = document.getElementById('floatingReservation');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          floatingReservation.classList.add('visible');
+        } else {
+          floatingReservation.classList.remove('visible');
+        }
+        
+        // AOS風のアニメーション
+        const animatedElements = document.querySelectorAll('[data-aos]');
+        animatedElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight * 0.8) {
+            element.classList.add('aos-animate');
+          }
+        });
+      });
+      
+      // スライドショー
+      const slides = document.querySelectorAll('.slideshow-slide');
+      const dots = document.querySelectorAll('.slideshow-dot');
+      const prevBtn = document.querySelector('.slideshow-prev');
+      const nextBtn = document.querySelector('.slideshow-next');
+      let currentSlide = 0;
+      
+      function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = (n + slides.length) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+      }
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+      }
+      
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+      });
+      
+      // 自動スライド
+      setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 5000);
+      
+      // FAQ
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+      
+      // タブ機能
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          const tabId = button.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
