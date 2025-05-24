@@ -327,6 +327,8 @@ body {
   max-width: 768px;
   margin: 0 auto 64px;
   text-align: center;
+  opacity: 1; /* 確実に表示 */
+  visibility: visible; /* 確実に表示 */
 }
 
 .content-text p {
@@ -335,6 +337,8 @@ body {
   line-height: 1.7;
   color: #333333;
   margin-bottom: 16px;
+  opacity: 1; /* 確実に表示 */
+  visibility: visible; /* 確実に表示 */
 }
 
 /* Gallery Grid */
@@ -350,8 +354,14 @@ body {
   aspect-ratio: 1;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.6s ease;
+  opacity: 1; /* 初期状態で表示 */
+  transform: translateY(0); /* 初期状態で正常位置 */
+}
+
+/* アニメーション前の状態 */
+.gallery-item:not(.animate-in) {
+  opacity: 0.3;
   transform: translateY(20px);
 }
 
@@ -711,6 +721,12 @@ body {
   overflow: hidden;
   transition: max-height 0.7s ease, opacity 0.7s ease;
   opacity: 0;
+}
+
+/* 初期状態でも一部のステップを表示するように変更 */
+.step-item:nth-child(-n + 3) .step-description {
+  max-height: 200px;
+  opacity: 1;
 }
 
 .step-item.active .step-description {

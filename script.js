@@ -2,6 +2,36 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script loaded successfully")
 
+  // 初期表示の確保 - ページロード時にコンテンツを表示
+  function ensureContentVisibility() {
+    // コンテンツテキストを確実に表示
+    const contentTexts = document.querySelectorAll(".content-text")
+    contentTexts.forEach((text) => {
+      text.style.opacity = "1"
+      text.style.visibility = "visible"
+    })
+
+    // ギャラリーアイテムを段階的に表示
+    const galleryItems = document.querySelectorAll(".gallery-item")
+    galleryItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add("animate-in")
+      }, index * 100)
+    })
+
+    // 最初の3つのステップを表示
+    const stepItems = document.querySelectorAll(".step-item")
+    stepItems.slice(0, 3).forEach((step, index) => {
+      setTimeout(() => {
+        step.classList.add("animate-in")
+        step.classList.add("active")
+      }, index * 200)
+    })
+  }
+
+  // 初期表示を実行
+  ensureContentVisibility()
+
   // Smooth scrolling for navigation links
   const navLinks = document.querySelectorAll('a[href^="#"]')
   navLinks.forEach((anchor) => {
@@ -28,17 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuClose = document.querySelector(".mobile-menu-close")
   const mobileNavLinks = document.querySelectorAll(".mobile-nav a")
 
-  mobileMenuBtn.addEventListener("click", () => {
-    mobileMenu.classList.add("active")
-  })
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active")
+    })
+  }
 
-  mobileMenuClose.addEventListener("click", () => {
-    mobileMenu.classList.remove("active")
-  })
+  if (mobileMenuClose && mobileMenu) {
+    mobileMenuClose.addEventListener("click", () => {
+      mobileMenu.classList.remove("active")
+    })
+  }
 
   mobileNavLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      mobileMenu.classList.remove("active")
+      if (mobileMenu) {
+        mobileMenu.classList.remove("active")
+      }
     })
   })
 
@@ -52,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
       langBtns.forEach((b) => b.classList.remove("active"))
       document.querySelectorAll(`[data-lang="${lang}"]`).forEach((b) => b.classList.add("active"))
 
-      // Here you could implement actual language switching logic
       console.log(`Language switched to: ${lang}`)
     })
   })
@@ -61,10 +96,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const floatingBtn = document.querySelector(".floating-reservation")
 
   function toggleFloatingButton() {
-    if (window.scrollY > 300) {
-      floatingBtn.classList.add("show")
-    } else {
-      floatingBtn.classList.remove("show")
+    if (floatingBtn) {
+      if (window.scrollY > 300) {
+        floatingBtn.classList.add("show")
+      } else {
+        floatingBtn.classList.remove("show")
+      }
     }
   }
 
@@ -74,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Listen for scroll events
   window.addEventListener("scroll", toggleFloatingButton)
 
-  // Scroll animations
+  // Scroll animations with improved visibility
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -116,12 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(element)
   })
 
-  // Observe gallery and enjoy steps separately
-  const gallery = document.querySelector(".gallery")
-  const enjoySteps = document.querySelector(".enjoy-steps")
-  if (gallery) observer.observe(gallery)
-  if (enjoySteps) observer.observe(enjoySteps)
-
   // Tab functionality
   const tabBtns = document.querySelectorAll(".tab-btn")
   const tabPanels = document.querySelectorAll(".tab-panel")
@@ -148,22 +179,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const faqItems = document.querySelectorAll(".faq-item")
   faqItems.forEach((item) => {
     const question = item.querySelector(".faq-question")
-    question.addEventListener("click", () => {
-      const isActive = item.classList.contains("active")
+    if (question) {
+      question.addEventListener("click", () => {
+        const isActive = item.classList.contains("active")
 
-      // Close all FAQ items
-      faqItems.forEach((faqItem) => {
-        faqItem.classList.remove("active")
+        // Close all FAQ items
+        faqItems.forEach((faqItem) => {
+          faqItem.classList.remove("active")
+        })
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add("active")
+        }
       })
-
-      // Open clicked item if it wasn't active
-      if (!isActive) {
-        item.classList.add("active")
-      }
-    })
+    }
   })
 
-  // Reservation timeline animation
+  // Reservation timeline animation - 改善版
   const timelineProgress = document.querySelector(".timeline-progress")
   const stepItems = document.querySelectorAll(".step-item")
 
@@ -182,8 +215,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Remove active class from all steps
       step.classList.remove("active")
 
-      // Check if step is in viewport and closest to center
+      // Check if step is in viewport
       if (rect.top < windowHeight && rect.bottom > 0) {
+        step.classList.add("animate-in")
+
         if (distance < closestDistance) {
           closestDistance = distance
           activeStep = index
@@ -192,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Activate closest step if within reasonable distance
-    if (activeStep !== -1 && closestDistance < windowHeight * 0.3) {
+    if (activeStep !== -1 && closestDistance < windowHeight * 0.4) {
       stepItems[activeStep].classList.add("active")
     }
 
@@ -216,19 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update timeline on scroll
   window.addEventListener("scroll", updateTimeline)
-  updateTimeline() // Initial call
 
-  // Gallery hover effects
-  const galleryItems = document.querySelectorAll(".gallery-item:not(.no-hover)")
-  galleryItems.forEach((item) => {
-    item.addEventListener("mouseenter", function () {
-      this.style.transform = "scale(1.02)"
-    })
-
-    item.addEventListener("mouseleave", function () {
-      this.style.transform = "scale(1)"
-    })
-  })
+  // 初期実行を遅延させて確実に動作させる
+  setTimeout(() => {
+    updateTimeline()
+  }, 100)
 
   console.log("All event listeners attached")
 })
