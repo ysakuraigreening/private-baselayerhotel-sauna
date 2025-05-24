@@ -47,39 +47,39 @@ export default function Home() {
 
   const reservationSteps = [
     {
-      title: "RESERVATIONより予約ページに進む",
+      title: "予約ページへ",
       description: "公式サイトのRESERVATIONボタンから予約システムにアクセスします。",
     },
     {
-      title: "希望の日時とサウナ部屋を選択",
+      title: "日時・部屋を選択",
       description: "カレンダーから希望する日付と時間帯を選択し、お好みのサウナルームタイプをお選びください。",
     },
     {
-      title: "個人情報を入力",
+      title: "情報を入力",
       description: "予約に必要な氏名、連絡先などの情報を入力します。",
     },
     {
-      title: "予約内容を確認",
+      title: "内容を確認",
       description: "選択した施設、日時、料金を最終確認します。",
     },
     {
-      title: "決済を完了",
+      title: "決済",
       description: "クレジットカードまたは電子マネーで決済を行います。",
     },
     {
-      title: "予約確定",
+      title: "予約完了",
       description: "予約完了メールを受信し、当日の準備を整えます。",
     },
     {
-      title: "時間5分前にフロントにお越し頂く",
+      title: "フロント受付（5分前）",
       description: "予約時間の5分前までにホテルフロントにお越しください。",
     },
     {
-      title: "フロントにて利用規約の確認とアメニティをお渡し",
+      title: "規約確認・アメニティ受取",
       description: "フロントスタッフが利用規約をご説明し、タオルやアメニティをお渡しします。",
     },
     {
-      title: "サウナを楽しむ",
+      title: "サウナ利用開始",
       description: "心身ともにリラックスして、至福のひとときをお過ごしください。",
     },
   ]
