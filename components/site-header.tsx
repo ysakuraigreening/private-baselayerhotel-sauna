@@ -16,7 +16,7 @@ export default function SiteHeader() {
               <Link href="/" className="text-white font-light text-sm tracking-wider en">
                 SAUNA ROOM
                 <br />
-                (BASE LAYER HOTEL)
+                <span className="text-xs">(BASE LAYER HOTEL)</span>
               </Link>
             </div>
 
