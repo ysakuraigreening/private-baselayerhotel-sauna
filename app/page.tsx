@@ -417,7 +417,7 @@ export default function Home() {
         <section id="sauna" className="scroll-animate bg-white py-20">
           <div className="max-w-6xl mx-auto px-4">
             {/* セクションヘッダー */}
-            <div className="flex justify-between items-center mb-16">
+            <div className="flex justify-between items-center mb-12">
               <div className="flex items-center gap-3">
                 <svg width="16" height="16" viewBox="0 0 8 8" className="fill-black flex-shrink-0">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
@@ -430,7 +430,7 @@ export default function Home() {
             </div>
 
             {/* コンテンツタイトル */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-light mb-2 en">SAUNAROOM</h2>
               <h3 className="text-base md:text-lg font-light mb-6 en">(BASE LAYER HOTEL)</h3>
             </div>
@@ -455,7 +455,7 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="scroll-animate bg-gray-50 py-20">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+            <div className="flex justify-between items-center mb-12">
               <div className="flex items-center gap-3">
                 <svg width="16" height="16" viewBox="0 0 8 8" className="fill-black">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
@@ -467,7 +467,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-light mb-6 en">ABOUT THE SAUNA ROOM</h2>
             </div>
 
@@ -487,7 +487,7 @@ export default function Home() {
         {/* Reservation Section */}
         <section id="reservation" className="scroll-animate bg-white py-20">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+            <div className="flex justify-between items-center mb-12">
               <div className="flex items-center gap-3">
                 <svg width="16" height="16" viewBox="0 0 8 8" className="fill-black">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
@@ -506,7 +506,7 @@ export default function Home() {
         {/* Enjoy Section */}
         <section id="enjoy" className="scroll-animate bg-gray-50 py-20">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+            <div className="flex justify-between items-center mb-12">
               <div className="flex items-center gap-3">
                 <svg width="16" height="16" viewBox="0 0 8 8" className="fill-black">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
@@ -518,7 +518,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-light mb-6 en">Embrace the Totonou Cycle</h2>
             </div>
 
@@ -529,7 +529,7 @@ export default function Home() {
         {/* FAQ Section */}
         <section id="faq" className="scroll-animate bg-white py-20">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+            <div className="flex justify-between items-center mb-12">
               <div className="flex items-center gap-3">
                 <svg width="16" height="16" viewBox="0 0 8 8" className="fill-black">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
