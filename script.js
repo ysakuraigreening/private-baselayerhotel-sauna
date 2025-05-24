@@ -1,10 +1,15 @@
-// Smooth scrolling for navigation links
+// DOM Content Loaded
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script loaded successfully")
+
   // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  const navLinks = document.querySelectorAll('a[href^="#"]')
+  navLinks.forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault()
-      const target = document.querySelector(this.getAttribute("href"))
+      const targetId = this.getAttribute("href")
+      const target = document.querySelector(targetId)
+
       if (target) {
         const headerHeight = document.querySelector(".header").offsetHeight
         const targetPosition = target.offsetTop - headerHeight
@@ -17,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Show/hide floating reservation button on scroll
+  // Floating reservation button
   const floatingBtn = document.querySelector(".floating-reservation")
 
   function toggleFloatingButton() {
@@ -34,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Listen for scroll events
   window.addEventListener("scroll", toggleFloatingButton)
 
-  // Add scroll animation for sections
+  // Scroll animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -43,22 +48,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = "1"
-        entry.target.style.transform = "translateY(0)"
+        entry.target.classList.add("animate-in")
       }
     })
   }, observerOptions)
 
   // Observe all sections for animation
-  document.querySelectorAll(".section").forEach((section) => {
-    section.style.opacity = "0"
-    section.style.transform = "translateY(30px)"
-    section.style.transition = "opacity 0.8s ease, transform 0.8s ease"
-    observer.observe(section)
+  const scrollElements = document.querySelectorAll(".scroll-animate")
+  scrollElements.forEach((element) => {
+    observer.observe(element)
   })
 
-  // Add hover effects for gallery items
-  document.querySelectorAll(".gallery-item").forEach((item) => {
+  // FAQ functionality
+  const faqQuestions = document.querySelectorAll(".faq-question")
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", function () {
+      const faqItem = this.parentElement
+      const isActive = faqItem.classList.contains("active")
+
+      // Close all FAQ items
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.classList.remove("active")
+      })
+
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add("active")
+      }
+    })
+  })
+
+  // Gallery hover effects
+  const galleryItems = document.querySelectorAll(".gallery-item")
+  galleryItems.forEach((item) => {
     item.addEventListener("mouseenter", function () {
       this.style.transform = "scale(1.02)"
     })
@@ -67,4 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       this.style.transform = "scale(1)"
     })
   })
+
+  console.log("All event listeners attached")
 })
