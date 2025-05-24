@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react"
 
 interface UsageStep {
-  step: string
   title: string
   description: string
 }
@@ -60,8 +59,10 @@ export default function UsageFlow({ steps }: UsageFlowProps) {
       <div className="max-w-4xl mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-20 opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]">
-          <h1 className="text-4xl font-light text-black mb-4 tracking-[0.2em] uppercase jp">ご利用の流れ</h1>
-          <p className="text-gray-600 text-base tracking-wide font-light en">How to Use</p>
+          <h1 className="text-4xl font-light text-black mb-4 tracking-[0.2em] uppercase">SAUNA RESERVATION</h1>
+          <p className="text-gray-600 text-base tracking-wide font-light">
+            サウナ予約の流れを簡単9ステップでご案内します
+          </p>
         </div>
 
         {/* Timeline */}
@@ -124,15 +125,15 @@ export default function UsageFlow({ steps }: UsageFlowProps) {
                   <div className="ml-16 flex-1">
                     {/* Step number above title */}
                     <div
-                      className={`text-xs font-light tracking-wider mb-2 transition-all duration-500 en ${
+                      className={`text-xs font-light tracking-wider mb-2 transition-all duration-500 ${
                         isActive ? "text-black opacity-100" : "text-gray-400 opacity-70"
                       }`}
                     >
-                      STEP {step.step}
+                      {String(index + 1).padStart(2, "0")}
                     </div>
 
                     <h3
-                      className={`text-lg font-light mb-4 tracking-wide transition-all duration-500 jp ${
+                      className={`text-lg font-light mb-4 tracking-wide transition-all duration-500 ${
                         isActive ? "text-black transform translate-x-2" : isPassed ? "text-gray-600" : "text-gray-400"
                       }`}
                     >
@@ -151,7 +152,7 @@ export default function UsageFlow({ steps }: UsageFlowProps) {
                           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black/10 to-transparent animate-pulse" />
                         </div>
 
-                        <p className="text-gray-700 leading-relaxed font-light text-sm tracking-wide relative z-10 animate-[fadeInUp_0.5s_ease-out] jp">
+                        <p className="text-gray-700 leading-relaxed font-light text-sm tracking-wide relative z-10 animate-[fadeInUp_0.5s_ease-out]">
                           {step.description}
                         </p>
 
@@ -170,16 +171,6 @@ export default function UsageFlow({ steps }: UsageFlowProps) {
                 </div>
               )
             })}
-          </div>
-        </div>
-
-        {/* Note */}
-        <div className="mt-16 max-w-3xl mx-auto">
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-none p-6 border-l-4 border-green-700 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-700/10 to-transparent" />
-            </div>
-            <p className="text-sm jp text-gray-700 relative z-10">※ 1つのキーで入館から退館（精算含む）まで一括管理</p>
           </div>
         </div>
       </div>
