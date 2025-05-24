@@ -194,7 +194,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-attachment: scroll; /* パフォーマンス向上のためfixedを避ける */
+  background-attachment: scroll;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -240,8 +240,8 @@ body {
 /* Section */
 .section {
   padding: 80px 0;
-  opacity: 1; /* 確実に表示 */
-  visibility: visible; /* 確実に表示 */
+  opacity: 1;
+  visibility: visible;
 }
 
 .section.gray {
@@ -300,8 +300,8 @@ body {
   max-width: 768px;
   margin: 0 auto 64px;
   text-align: center;
-  opacity: 1; /* 確実に表示 */
-  visibility: visible; /* 確実に表示 */
+  opacity: 1;
+  visibility: visible;
 }
 
 .content-text p {
@@ -310,8 +310,8 @@ body {
   line-height: 1.7;
   color: #333333;
   margin-bottom: 16px;
-  opacity: 1; /* 確実に表示 */
-  visibility: visible; /* 確実に表示 */
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Gallery Grid */
@@ -328,8 +328,8 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
-  opacity: 1; /* 初期状態で表示 */
-  transform: translateY(0); /* 初期状態で正常位置 */
+  opacity: 1;
+  transform: translateY(0);
   min-height: 200px;
 }
 
@@ -567,7 +567,7 @@ body {
   line-height: 1.5;
 }
 
-/* Reservation Flow */
+/* Reservation Flow - タイムライン位置を大幅修正 */
 .reservation-flow {
   max-width: 800px;
   margin: 0 auto;
@@ -575,12 +575,12 @@ body {
 
 .timeline {
   position: relative;
-  padding-left: 40px;
+  padding-left: 48px; /* 大幅に増加 */
 }
 
 .timeline-line {
   position: absolute;
-  left: 16px;
+  left: 20px; /* 中央に配置 */
   top: 0;
   width: 2px;
   height: 100%;
@@ -589,7 +589,7 @@ body {
 
 .timeline-progress {
   position: absolute;
-  left: 16px;
+  left: 20px; /* timeline-lineと同じ位置 */
   top: 0;
   width: 2px;
   height: 0%;
@@ -601,14 +601,14 @@ body {
 .step-item {
   position: relative;
   margin-bottom: 80px;
-  opacity: 1; /* 初期状態で表示 */
-  transform: translateX(0); /* 初期状態で正常位置 */
+  opacity: 1;
+  transform: translateX(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .step-dot {
   position: absolute;
-  left: -24px;
+  left: -27px; /* timeline-lineの中央に配置 */
   top: 8px;
   width: 12px;
   height: 12px;
@@ -625,7 +625,7 @@ body {
 }
 
 .step-content {
-  padding-left: 24px;
+  padding-left: 0; /* パディングを削除 */
 }
 
 .step-number {
@@ -655,18 +655,17 @@ body {
 }
 
 .step-description {
-  max-height: 0; /* 初期状態は閉じた状態 */
+  max-height: 0;
   overflow: hidden;
   transition: max-height 0.7s ease, opacity 0.7s ease;
-  opacity: 0; /* 初期状態は非表示 */
+  opacity: 0;
 }
 
 .step-item.active .step-description {
-  max-height: 300px; /* アクティブ時に開く */
+  max-height: 300px;
   opacity: 1;
 }
 
-/* 最初の3つのステップは初期表示 */
 .step-item:nth-child(-n + 3) .step-description {
   max-height: 300px;
   opacity: 1;
@@ -684,7 +683,7 @@ body {
   overflow: hidden;
 }
 
-/* Enjoy Steps */
+/* Enjoy Steps - 構造を修正 */
 .enjoy-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -695,8 +694,8 @@ body {
 
 .enjoy-step {
   text-align: center;
-  opacity: 1; /* 初期状態で表示 */
-  transform: translateY(0); /* 初期状態で正常位置 */
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -724,18 +723,24 @@ body {
   justify-content: flex-end;
   padding: 24px;
   color: #ffffff;
+  opacity: 1;
+  visibility: visible;
 }
 
 .enjoy-number {
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 8px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .enjoy-title {
   font-size: 32px;
   font-weight: 300;
   margin-bottom: 12px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .enjoy-description {
@@ -743,6 +748,8 @@ body {
   font-weight: 300;
   color: #6b7280;
   line-height: 1.6;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* FAQ */
@@ -917,8 +924,6 @@ body {
 }
 
 /* 画像最適化のためのCSS追加 */
-
-/* 遅延読み込み画像のスタイル */
 .lazy-image {
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -929,7 +934,6 @@ body {
   opacity: 1;
 }
 
-/* 画像読み込み中のプレースホルダー */
 .lazy-image:not(.loaded) {
   background-image: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
   background-size: 200% 100%;
@@ -945,7 +949,6 @@ body {
   }
 }
 
-/* 画像の最適化 */
 img {
   max-width: 100%;
   height: auto;
@@ -1037,11 +1040,16 @@ img {
   }
 
   .timeline {
-    padding-left: 32px;
+    padding-left: 40px;
   }
 
-  .step-content {
-    padding-left: 16px;
+  .timeline-line,
+  .timeline-progress {
+    left: 16px;
+  }
+
+  .step-dot {
+    left: -23px;
   }
 
   .gallery-item {
@@ -1093,10 +1101,35 @@ img {
   }
 
   .timeline {
-    padding-left: 24px;
+    padding-left: 36px;
+  }
+
+  .timeline-line,
+  .timeline-progress {
+    left: 14px;
+  }
+
+  .step-dot {
+    left: -21px;
   }
 
   .step-description p {
     padding: 16px;
+  }
+
+  .enjoy-overlay {
+    padding: 16px;
+  }
+
+  .enjoy-number {
+    font-size: 20px;
+  }
+
+  .enjoy-title {
+    font-size: 24px;
+  }
+
+  .enjoy-description {
+    font-size: 12px;
   }
 }

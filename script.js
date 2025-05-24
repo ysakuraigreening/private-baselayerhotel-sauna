@@ -118,10 +118,42 @@ document.addEventListener("DOMContentLoaded", () => {
       step.style.opacity = "1"
       step.style.transform = "translateY(0)"
     })
+
+    // Enjoy overlayを確実に表示
+    const enjoyOverlays = document.querySelectorAll(".enjoy-overlay")
+    enjoyOverlays.forEach((overlay) => {
+      overlay.style.opacity = "1"
+      overlay.style.visibility = "visible"
+    })
+
+    // Enjoy overlay内のテキストを確実に表示
+    const enjoyNumbers = document.querySelectorAll(".enjoy-number")
+    const enjoyTitles = document.querySelectorAll(".enjoy-title")
+    const enjoyDescriptions = document.querySelectorAll(".enjoy-description")
+
+    enjoyNumbers.forEach((element) => {
+      element.style.opacity = "1"
+      element.style.visibility = "visible"
+    })
+
+    enjoyTitles.forEach((element) => {
+      element.style.opacity = "1"
+      element.style.visibility = "visible"
+    })
+
+    enjoyDescriptions.forEach((element) => {
+      element.style.opacity = "1"
+      element.style.visibility = "visible"
+    })
   }
 
   // 初期表示を即座に実行
   ensureContentVisibility()
+
+  // 少し遅延させて再度実行（確実性を高める）
+  setTimeout(() => {
+    ensureContentVisibility()
+  }, 100)
 
   // Smooth scrolling for navigation links
   const navLinks = document.querySelectorAll('a[href^="#"]')
