@@ -81,10 +81,10 @@ body {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23333" width="1200" height="800"/><text x="50%" y="50%" font-family="Arial" font-size="48" fill="%23fff" text-anchor="middle" dy=".3em">SAUNA HERO IMAGE</text></svg>');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("public/hero-sauna-image.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   position: relative;
   display: flex;
   align-items: center;
@@ -289,6 +289,61 @@ body {
   font-weight: 300;
   opacity: 0.9;
   line-height: 1.4;
+}
+
+/* Pricing Section */
+.pricing-section {
+  margin-top: 48px;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #1f2937;
+}
+
+.pricing-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.pricing-table h4 {
+  font-size: 1.125rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.pricing-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 300;
+}
+
+.pricing-table th {
+  background-color: #f9fafb;
+  font-weight: 400;
+  color: #374151;
+}
+
+.pricing-table td {
+  color: #6b7280;
 }
 
 /* Reservation Steps */
@@ -533,6 +588,10 @@ body {
     display: none;
   }
 
+  .hero {
+    background-attachment: scroll; /* モバイルでのパフォーマンス向上 */
+  }
+
   .hero-title {
     font-size: 2rem;
   }
@@ -552,6 +611,11 @@ body {
 
   .gallery-item.large {
     grid-column: span 1;
+  }
+
+  .pricing-tables {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .footer-content {
@@ -623,5 +687,18 @@ body {
   .step-item {
     padding: 16px;
     margin-bottom: 24px;
+  }
+
+  .pricing-section {
+    padding: 24px 16px;
+  }
+
+  .pricing-table table {
+    font-size: 12px;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 8px 4px;
   }
 }
