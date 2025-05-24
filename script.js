@@ -2,8 +2,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script loaded successfully")
 
-  // 初期表示の確保 - ページロード時にコンテンツを表示
+  // 初期表示の確保 - すべてのコンテンツを即座に表示
   function ensureContentVisibility() {
+    // すべてのセクションを表示
+    const sections = document.querySelectorAll(".section")
+    sections.forEach((section) => {
+      section.style.opacity = "1"
+      section.style.visibility = "visible"
+    })
+
     // コンテンツテキストを確実に表示
     const contentTexts = document.querySelectorAll(".content-text")
     contentTexts.forEach((text) => {
@@ -11,25 +18,29 @@ document.addEventListener("DOMContentLoaded", () => {
       text.style.visibility = "visible"
     })
 
-    // ギャラリーアイテムを段階的に表示
+    // ギャラリーアイテムを即座に表示
     const galleryItems = document.querySelectorAll(".gallery-item")
-    galleryItems.forEach((item, index) => {
-      setTimeout(() => {
-        item.classList.add("animate-in")
-      }, index * 100)
+    galleryItems.forEach((item) => {
+      item.style.opacity = "1"
+      item.style.transform = "translateY(0)"
     })
 
-    // 最初の3つのステップを表示
+    // ステップアイテムを即座に表示
     const stepItems = document.querySelectorAll(".step-item")
-    stepItems.slice(0, 3).forEach((step, index) => {
-      setTimeout(() => {
-        step.classList.add("animate-in")
-        step.classList.add("active")
-      }, index * 200)
+    stepItems.forEach((step) => {
+      step.style.opacity = "1"
+      step.style.transform = "translateX(0)"
+    })
+
+    // Enjoyステップを即座に表示
+    const enjoySteps = document.querySelectorAll(".enjoy-step")
+    enjoySteps.forEach((step) => {
+      step.style.opacity = "1"
+      step.style.transform = "translateY(0)"
     })
   }
 
-  // 初期表示を実行
+  // 初期表示を即座に実行
   ensureContentVisibility()
 
   // Smooth scrolling for navigation links
@@ -111,48 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Listen for scroll events
   window.addEventListener("scroll", toggleFloatingButton)
 
-  // Scroll animations with improved visibility
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate-in")
-
-        // Animate gallery items with delay
-        if (entry.target.classList.contains("gallery")) {
-          const galleryItems = entry.target.querySelectorAll(".gallery-item")
-          galleryItems.forEach((item, index) => {
-            const delay = item.dataset.delay || index * 100
-            setTimeout(() => {
-              item.classList.add("animate-in")
-            }, delay)
-          })
-        }
-
-        // Animate enjoy steps with delay
-        if (entry.target.classList.contains("enjoy-steps")) {
-          const enjoySteps = entry.target.querySelectorAll(".enjoy-step")
-          enjoySteps.forEach((step, index) => {
-            const delay = step.dataset.delay || index * 100
-            setTimeout(() => {
-              step.classList.add("animate-in")
-            }, delay)
-          })
-        }
-      }
-    })
-  }, observerOptions)
-
-  // Observe all sections for animation
-  const scrollElements = document.querySelectorAll(".scroll-animate")
-  scrollElements.forEach((element) => {
-    observer.observe(element)
-  })
-
   // Tab functionality
   const tabBtns = document.querySelectorAll(".tab-btn")
   const tabPanels = document.querySelectorAll(".tab-panel")
@@ -196,16 +165,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Reservation timeline animation - 改善版
+  // Reservation timeline animation - シンプル版
   const timelineProgress = document.querySelector(".timeline-progress")
   const stepItems = document.querySelectorAll(".step-item")
 
   function updateTimeline() {
     const windowHeight = window.innerHeight
     const centerY = windowHeight / 2
-
-    let activeStep = -1
-    let closestDistance = Number.POSITIVE_INFINITY
 
     stepItems.forEach((step, index) => {
       const rect = step.getBoundingClientRect()
@@ -215,21 +181,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Remove active class from all steps
       step.classList.remove("active")
 
-      // Check if step is in viewport
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        step.classList.add("animate-in")
-
-        if (distance < closestDistance) {
-          closestDistance = distance
-          activeStep = index
-        }
+      // Check if step is in viewport and close to center
+      if (rect.top < windowHeight && rect.bottom > 0 && distance < windowHeight * 0.5) {
+        step.classList.add("active")
       }
     })
-
-    // Activate closest step if within reasonable distance
-    if (activeStep !== -1 && closestDistance < windowHeight * 0.4) {
-      stepItems[activeStep].classList.add("active")
-    }
 
     // Update timeline progress
     const reservationSection = document.querySelector("#reservation")
@@ -252,10 +208,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update timeline on scroll
   window.addEventListener("scroll", updateTimeline)
 
-  // 初期実行を遅延させて確実に動作させる
+  // 初期実行
   setTimeout(() => {
     updateTimeline()
   }, 100)
 
-  console.log("All event listeners attached")
+  console.log("All event listeners attached and content displayed")
 })

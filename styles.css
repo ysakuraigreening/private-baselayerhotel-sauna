@@ -189,7 +189,7 @@ body {
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/concept-image.jpg-FQgRt33Q1Hg8HDulRlgZEtOT57dJUU.jpeg");
+    url("/placeholder.svg?height=1080&width=1920&text=Hero+Background");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -235,40 +235,11 @@ body {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.scroll-animate.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Section */
 .section {
   padding: 80px 0;
+  opacity: 1; /* 確実に表示 */
+  visibility: visible; /* 確実に表示 */
 }
 
 .section.gray {
@@ -354,20 +325,9 @@ body {
   aspect-ratio: 1;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.6s ease;
+  transition: transform 0.3s ease;
   opacity: 1; /* 初期状態で表示 */
   transform: translateY(0); /* 初期状態で正常位置 */
-}
-
-/* アニメーション前の状態 */
-.gallery-item:not(.animate-in) {
-  opacity: 0.3;
-  transform: translateY(20px);
-}
-
-.gallery-item.animate-in {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .gallery-item.large {
@@ -637,14 +597,9 @@ body {
 .step-item {
   position: relative;
   margin-bottom: 80px;
-  opacity: 0;
-  transform: translateX(-20px);
+  opacity: 1; /* 初期状態で表示 */
+  transform: translateX(0); /* 初期状態で正常位置 */
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.step-item.animate-in {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .step-dot {
@@ -663,27 +618,6 @@ body {
   background-color: #000000;
   transform: scale(1.5);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-.step-item.active .step-dot::after {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.2;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(1.2);
-  }
 }
 
 .step-content {
@@ -717,21 +651,10 @@ body {
 }
 
 .step-description {
-  max-height: 0;
+  max-height: 200px; /* 初期状態で表示 */
   overflow: hidden;
   transition: max-height 0.7s ease, opacity 0.7s ease;
-  opacity: 0;
-}
-
-/* 初期状態でも一部のステップを表示するように変更 */
-.step-item:nth-child(-n + 3) .step-description {
-  max-height: 200px;
-  opacity: 1;
-}
-
-.step-item.active .step-description {
-  max-height: 200px;
-  opacity: 1;
+  opacity: 1; /* 初期状態で表示 */
 }
 
 .step-description p {
@@ -746,17 +669,6 @@ body {
   overflow: hidden;
 }
 
-.step-description p::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.02) 0%, transparent 100%);
-  opacity: 0.5;
-}
-
 /* Enjoy Steps */
 .enjoy-steps {
   display: grid;
@@ -768,14 +680,9 @@ body {
 
 .enjoy-step {
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1; /* 初期状態で表示 */
+  transform: translateY(0); /* 初期状態で正常位置 */
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.enjoy-step.animate-in {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .enjoy-image {
