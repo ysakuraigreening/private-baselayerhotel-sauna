@@ -48,8 +48,7 @@ export default function Home() {
   const reservationSteps = [
     {
       title: "RESERVATIONより予約ページに進む",
-      description:
-        "公式サイトのRESERVATIONボタンから予約システムにアクセスします。簡単で安全な予約プロセスが始まります。",
+      description: "公式サイトのRESERVATIONボタンから予約システムにアクセスします。",
     },
     {
       title: "希望の日時とサウナ部屋を選択",
@@ -57,32 +56,31 @@ export default function Home() {
     },
     {
       title: "個人情報を入力",
-      description: "予約に必要な氏名、連絡先などの情報を入力します。セキュアな環境で安全に処理されます。",
+      description: "予約に必要な氏名、連絡先などの情報を入力します。",
     },
     {
       title: "予約内容を確認",
-      description: "選択した施設、日時、料金を最終確認します。間違いがないかしっかりとチェックしましょう。",
+      description: "選択した施設、日時、料金を最終確認します。",
     },
     {
       title: "決済を完了",
-      description: "クレジットカードまたは電子マネーで決済を行います。安全な決済システムを使用しています。",
+      description: "クレジットカードまたは電子マネーで決済を行います。",
     },
     {
       title: "予約確定",
-      description: "予約完了メールを受信し、当日の準備を整えます。QRコードでスムーズにチェックインできます。",
+      description: "予約完了メールを受信し、当日の準備を整えます。",
     },
     {
       title: "時間5分前にフロントにお越し頂く",
-      description: "予約時間の5分前までにホテルフロントにお越しください。スムーズなご案内のためご協力をお願いします。",
+      description: "予約時間の5分前までにホテルフロントにお越しください。",
     },
     {
       title: "フロントにて利用規約の確認とアメニティをお渡し",
-      description:
-        "フロントスタッフが利用規約をご説明し、タオルやアメニティをお渡しします。ご不明な点はお気軽にお尋ねください。",
+      description: "フロントスタッフが利用規約をご説明し、タオルやアメニティをお渡しします。",
     },
     {
       title: "サウナを楽しむ",
-      description: "いよいよサウナタイム！心身ともにリラックスして、至福のひとときをお過ごしください。",
+      description: "心身ともにリラックスして、至福のひとときをお過ごしください。",
     },
   ]
 
@@ -91,32 +89,28 @@ export default function Home() {
       id: "step-1",
       number: "01",
       title: "Sauna",
-      description:
-        "HARVIA製のストーブがじんわりと体を温めます。体が温まったら、Athletiaのオイルが入ったロウリュ水で香りもお楽しみください。",
+      description: "HARVIA製のストーブで体を温めます。Athletiaのオイル入りロウリュ水で香りもお楽しみください。",
       imageUrl: "/sauna-image.jpg",
     },
     {
       id: "step-2",
       number: "02",
       title: "Cold Bath",
-      description:
-        "体が十分に温まったら、水風呂コーナーへ。製氷機も設置していますので、氷入りのキンキンな水風呂にアレンジも可能です。",
+      description: "体が十分に温まったら水風呂へ。製氷機完備で、氷入りのキンキンな水風呂も可能です。",
       imageUrl: "/coldbath-image.jpg",
     },
     {
       id: "step-3",
       number: "03",
       title: "Totonou",
-      description:
-        "水風呂のあとは整いスペースへ。足を広々と伸ばせるチェアと、冷蔵庫やテレビも完備。名古屋の街中とは思えない解放感をお楽しみください。",
+      description: "水風呂のあとは整いスペースへ。足を伸ばせるチェアと冷蔵庫、テレビも完備。",
       imageUrl: "/totonoi-image.jpg",
     },
     {
       id: "step-4",
       number: "04",
       title: "Repeat",
-      description:
-        "サウナ→水風呂→休憩のサイクルを繰り返すことで、より深いリラクゼーションを体験できます。自分のペースで何度でも繰り返しましょう。",
+      description: "サウナ→水風呂→休憩のサイクルを繰り返すことで、より深いリラクゼーションを体験できます。",
       imageUrl: "/heater-image.jpg",
     },
   ]
@@ -126,8 +120,7 @@ export default function Home() {
       id: "feature-1",
       number: "01",
       title: "Harbiaサウナストーブ",
-      description:
-        "フィンランド製の高品質Harbiaサウナヒーターを導入。均一で心地よい熱波（ロウリュ）が、本場さながらの体験を提供します。",
+      description: "フィンランド製の高品質Harbiaサウナヒーターを導入。本場さながらの体験を提供します。",
       imageUrl: "/heater-image.jpg",
       size: "medium" as const,
     },
@@ -135,7 +128,7 @@ export default function Home() {
       id: "feature-2",
       number: "02",
       title: "整いスペース",
-      description: "サウナと水風呂の間に設けられた専用の休憩スペース。ゆったりとした空間で「ととのい」を体感できます。",
+      description: "サウナと水風呂の間に設けられた専用の休憩スペース。「ととのい」を体感できます。",
       imageUrl: "/totonoi-image.jpg",
       size: "medium" as const,
     },
@@ -143,8 +136,7 @@ export default function Home() {
       id: "feature-3",
       number: "03",
       title: "滞在型サウナ",
-      description:
-        "通常のサウナとは異なり、長時間滞在できる設計。サウナ、水風呂、休憩を自分のペースで繰り返し楽しめます。",
+      description: "長時間滞在できる設計。サウナ、水風呂、休憩を自分のペースで繰り返し楽しめます。",
       imageUrl: "/sauna2-image.jpg",
       size: "medium" as const,
     },
@@ -161,8 +153,7 @@ export default function Home() {
       id: "amenity-2",
       number: "05",
       title: "FRUIT OF THE LOOMS オリジナルタオル",
-      description:
-        "大人気のベーシックアパレル/アンダーウェアメーカーであるFRUIT OF THE LOOMSとのコラボレーションアイテムをサウナルームでもご利用いただけます。バスタオル・フェイスタオルともにご用意がございます。",
+      description: "人気のFRUIT OF THE LOOMSとのコラボレーションアイテム。バスタオル・フェイスタオルをご用意。",
       imageUrl: "/fruit-image.jpg",
       size: "medium" as const,
     },
@@ -170,8 +161,7 @@ export default function Home() {
       id: "amenity-3",
       number: "06",
       title: "Athletia アメニティ",
-      description:
-        "「balance your active / relaxing cycle」をコンセプトにスキンケア商品を展開するAthletiaのアメニティを、サウナルームではボディケアアイテムだけでなくスキンケアアイテム全般にわたり導入。",
+      description: "「balance your active / relaxing cycle」をコンセプトにしたAthletiaのアメニティを完備。",
       imageUrl: "/athletia-image.jpg",
       size: "small" as const,
     },
@@ -179,8 +169,7 @@ export default function Home() {
       id: "amenity-4",
       number: "07",
       title: "Cado ドライヤー",
-      description:
-        "美しいフォルムやデザインだけでなく、その実用性も魅力のCadoアイテム。今回サウナルームにはバトン型のドライヤーを導入。パワフルな風量で、アフターサウナの準備時間もストレスフリーに。",
+      description: "美しいフォルムと実用性を兼ね備えたCadoのバトン型ドライヤーを導入。",
       imageUrl: "/cado-image.jpg",
       size: "small" as const,
     },
@@ -188,8 +177,7 @@ export default function Home() {
       id: "amenity-1",
       number: "08",
       title: "オリジナルサウナウェア",
-      description:
-        "オリジナルサウナウェアは、ユニセックスの半ズボンタイプのショーツとWomensブラトップ、サウナハットをご用意。軽素材で動きやすく、速乾性にも優れたウェアとなっており、サウナをご予約いただいたお客様はどなたでもご利用いただけます。",
+      description: "ユニセックスショーツ、Womensブラトップ、サウナハットをご用意。軽素材で速乾性に優れています。",
       imageUrl: "/saunaweare-image.png",
       size: "medium" as const,
     },
@@ -370,22 +358,20 @@ export default function Home() {
     {
       question: "予約はどのように行えばよいですか？",
       answer:
-        "ご予約はウェブサイトの予約フォーム、またはお電話にて承っております。ご利用の3日前までのご予約をおすすめしております。",
+        "ウェブサイトの予約フォーム、またはお電話にて承っております。ご利用の3日前までのご予約をおすすめしております。",
     },
     {
       question: "初めてのサウナですが大丈夫でしょうか？",
       answer:
-        "もちろんです。スタッフが丁寧にご案内いたしますので、初めての方でも安心してご利用いただけます。サウナの温度や時間など、お好みに合わせてアドバイスもさせていただきます。",
+        "スタッフが丁寧にご案内いたしますので、初めての方でも安心してご利用いただけます。サウナの温度や時間など、お好みに合わせてアドバイスもさせていただきます。",
     },
     {
       question: "持ち物は何が必要ですか？",
-      answer:
-        "手ぶらでお越しいただけます。タオル、サウナウェア、アメニティ類はすべてご用意しております。お好みのドリンクなどがございましたら、ご持参いただくことも可能です。",
+      answer: "手ぶらでお越しいただけます。タオル、サウナウェア、アメニティ類はすべてご用意しております。",
     },
     {
       question: "サウナの温度は調整できますか？",
-      answer:
-        "はい、お客様のご希望に合わせて温度調整が可能です。ご予約時またはご利用開始時にスタッフにお申し付けください。",
+      answer: "お客様のご希望に合わせて温度調整が可能です。ご予約時またはご利用開始時にスタッフにお申し付けください。",
     },
     {
       question: "キャンセルポリシーを教えてください",
@@ -422,8 +408,6 @@ export default function Home() {
               >
                 <h1 className="hero-title text-4xl md:text-6xl font-light mb-4 en">SAUNA ROOM</h1>
                 <h2 className="hero-subtitle text-base md:text-lg font-light mb-8 en">(BASE LAYER HOTEL)</h2>
-                <p className="text-sm md:text-base font-light en mb-4">The Totonou Loop:</p>
-                <p className="text-xs md:text-sm text-white/70 en">Sauna　→　Chill　→　Reset　→　Repeat.</p>
               </motion.div>
             </div>
           </div>
@@ -445,7 +429,7 @@ export default function Home() {
             </div>
 
             <div className="text-center mb-16">
-              <h2 className="content-title text-xl md:text-2xl font-light mb-6 en">
+              <h2 className="text-3xl md:text-4xl font-light mb-6 en">
                 SAUNAROOM
                 <br />
                 (BASE LAYER HOTEL)
@@ -456,8 +440,7 @@ export default function Home() {
               <div className="space-y-4 jp">
                 <p className="content-text">ご宿泊者様限定の完全予約制プライベートサウナルーム。</p>
                 <p className="content-text">
-                  オート＆セルフロウリュが楽しめるサウナと整いスペースを併設。
-                  オリジナルサウナウェアやAthletiaアメニティも完備しています。
+                  オート＆セルフロウリュが楽しめるサウナと整いスペースを併設。オリジナルサウナウェアやAthletiaアメニティも完備。
                 </p>
               </div>
             </div>
@@ -503,6 +486,12 @@ export default function Home() {
               <div>
                 <p className="section-number en">03</p>
               </div>
+            </div>
+
+            {/* Totonou Loop moved here */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-light mb-8 en">The Totonou Loop:</h2>
+              <p className="text-lg md:text-xl text-zinc-600 en">Sauna　→　Chill　→　Reset　→　Repeat.</p>
             </div>
 
             <LinearEnjoySauna steps={enjoySteps} />
