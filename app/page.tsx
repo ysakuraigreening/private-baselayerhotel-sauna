@@ -10,6 +10,7 @@ import SaunaDetailsEnhanced from "@/components/sauna-details-enhanced"
 import ImageSlideshow from "@/components/image-slideshow"
 import ModernGallery from "@/components/modern-gallery"
 import LinearEnjoySauna from "@/components/linear-enjoy-sauna"
+import UsageFlow from "@/components/usage-flow"
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -42,6 +43,41 @@ export default function Home() {
 
     return () => observer.disconnect()
   }, [])
+
+  const usageSteps = [
+    {
+      step: "01",
+      title: "来店",
+    },
+    {
+      step: "02",
+      title: "ICチップ付下足キーを取り下足箱に靴を入れる",
+    },
+    {
+      step: "03",
+      title: "そのキーを使用してゲート入館",
+    },
+    {
+      step: "04",
+      title: "同じ番号のロッカーを使用",
+    },
+    {
+      step: "05",
+      title: "サウナ堪能",
+    },
+    {
+      step: "06",
+      title: "ICチップを利用して精算機で精算",
+    },
+    {
+      step: "07",
+      title: "ゲートでスキャンして退館",
+    },
+    {
+      step: "08",
+      title: "下足箱で靴を取って退店",
+    },
+  ]
 
   const enjoySteps = [
     {
@@ -437,6 +473,11 @@ export default function Home() {
                   { src: "/totonoi-image.jpg", alt: "整いスペース" },
                 ]}
               />
+            </div>
+
+            {/* Usage Flow Section */}
+            <div className="mb-20">
+              <UsageFlow steps={usageSteps} />
             </div>
 
             <SaunaDetailsEnhanced features={saunaFeatures} details={saunaDetails} />
