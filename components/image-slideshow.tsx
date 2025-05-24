@@ -40,7 +40,7 @@ export default function ImageSlideshow({ images, interval = 5000, autoPlay = tru
 
   return (
     <div
-      className="relative w-full h-[500px] overflow-hidden rounded-lg"
+      className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-lg"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -63,9 +63,9 @@ export default function ImageSlideshow({ images, interval = 5000, autoPlay = tru
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows - hidden on mobile */}
       <button
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors z-10"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-colors z-10 hidden sm:flex"
         onClick={handlePrev}
         aria-label="Previous slide"
       >
@@ -74,13 +74,13 @@ export default function ImageSlideshow({ images, interval = 5000, autoPlay = tru
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 sm:w-6 sm:h-6"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       <button
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors z-10"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-colors z-10 hidden sm:flex"
         onClick={handleNext}
         aria-label="Next slide"
       >
@@ -89,14 +89,14 @@ export default function ImageSlideshow({ images, interval = 5000, autoPlay = tru
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 sm:w-6 sm:h-6"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       {/* Dots indicator */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
+      <div className="absolute bottom-2 sm:bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
         {images.map((_, index) => (
           <button
             key={index}

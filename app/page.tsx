@@ -369,27 +369,29 @@ export default function Home() {
           </motion.div>
 
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="text-center text-white max-w-4xl mx-auto px-4">
+            <div className="text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                <h1 className="text-5xl md:text-7xl font-light mb-4 en">SAUNA ROOM</h1>
-                <h2 className="text-xl md:text-2xl font-light mb-8 en">(BASE LAYER HOTEL)</h2>
-                <p className="text-lg md:text-xl font-light en mb-4">The Totonou Loop:</p>
-                <p className="text-sm md:text-base text-white/70 en">Sauna　→　Chill　→　Reset　→　Repeat.</p>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-2 sm:mb-4 en leading-tight">
+                  SAUNA ROOM
+                </h1>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-light mb-6 sm:mb-8 en">(BASE LAYER HOTEL)</h2>
+                <p className="text-base sm:text-lg md:text-xl font-light en mb-2 sm:mb-4">The Totonou Loop:</p>
+                <p className="text-sm sm:text-base text-white/70 en">Sauna　→　Chill　→　Reset　→　Repeat.</p>
               </motion.div>
             </div>
           </div>
         </section>
 
         {/* Sauna Section */}
-        <section id="sauna" className="scroll-animate bg-white py-20">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+        <section id="sauna" className="scroll-animate bg-white py-12 sm:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 sm:mb-16 gap-4 sm:gap-0">
               <div className="flex items-center gap-3">
-                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700">
+                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700 flex-shrink-0">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
                 </svg>
                 <p className="text-sm font-light tracking-wider en">SAUNA</p>
@@ -399,35 +401,37 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-light mb-6 en leading-tight">
-                STAY IN COMFORT AND ENGAGE WITH LOCAL
-                <br />
-                CULTURE AT YOUR INSPIRATIONAL BASE FOR
-                <br />
-                TRAVEL AND SIGHTSEEING.
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 sm:mb-6 en leading-tight px-4">
+                <span className="block sm:inline">STAY IN COMFORT AND ENGAGE WITH LOCAL</span>
+                <br className="hidden sm:block" />
+                <span className="block sm:inline">CULTURE AT YOUR INSPIRATIONAL BASE FOR</span>
+                <br className="hidden sm:block" />
+                <span className="block sm:inline">TRAVEL AND SIGHTSEEING.</span>
               </h2>
-              <h5 className="text-xl md:text-2xl font-light jp">
+              <h5 className="text-lg sm:text-xl md:text-2xl font-light jp px-4">
                 快適な滞在と楽しい街遊びを支える
                 <br />
                 基礎的機能ホテル
               </h5>
             </div>
 
-            <div className="max-w-4xl mx-auto mb-16 text-center">
-              <div className="space-y-6 jp">
-                <p className="text-lg leading-relaxed">
+            <div className="max-w-4xl mx-auto mb-12 sm:mb-16 text-center px-4">
+              <div className="space-y-4 sm:space-y-6 jp">
+                <p className="text-base sm:text-lg leading-relaxed">
                   ご宿泊者様限定の完全予約制プライベートサウナルーム。
-                  <br />
+                  <br className="hidden sm:block" />
                   オート＆セルフロウリュが楽しめるサウナと浴槽スペース
-                  <br />
+                  <br className="hidden sm:block" />
                   そして、ゆったりとした整いスペースも併設しています。
                 </p>
-                <p className="text-lg leading-relaxed">オリジナルのサウナウェアやAthletiaのアメニティも付いてます。</p>
+                <p className="text-base sm:text-lg leading-relaxed">
+                  オリジナルのサウナウェアやAthletiaのアメニティも付いてます。
+                </p>
               </div>
             </div>
 
-            <div className="max-w-4xl mx-auto mb-20">
+            <div className="max-w-4xl mx-auto mb-16 sm:mb-20 px-4">
               <ImageSlideshow
                 images={[
                   { src: "/concept-image.jpg", alt: "サウナルーム" },
@@ -442,11 +446,11 @@ export default function Home() {
         </section>
 
         {/* Enjoy Section */}
-        <section id="enjoy" className="scroll-animate bg-gray-50 py-20">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+        <section id="enjoy" className="scroll-animate bg-gray-50 py-12 sm:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 sm:mb-16 gap-4 sm:gap-0">
               <div className="flex items-center gap-3">
-                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700">
+                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700 flex-shrink-0">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
                 </svg>
                 <p className="text-sm font-light tracking-wider en">ENJOY</p>
@@ -461,11 +465,11 @@ export default function Home() {
         </section>
 
         {/* Gallery Section */}
-        <section id="gallery" className="scroll-animate bg-white py-20">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+        <section id="gallery" className="scroll-animate bg-white py-12 sm:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 sm:mb-16 gap-4 sm:gap-0">
               <div className="flex items-center gap-3">
-                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700">
+                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700 flex-shrink-0">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
                 </svg>
                 <p className="text-sm font-light tracking-wider en">AMENITY</p>
@@ -480,11 +484,11 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="scroll-animate bg-gray-50 py-20">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="flex justify-between items-center mb-16">
+        <section id="faq" className="scroll-animate bg-gray-50 py-12 sm:py-16 lg:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 sm:mb-16 gap-4 sm:gap-0">
               <div className="flex items-center gap-3">
-                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700">
+                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-green-700 flex-shrink-0">
                   <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
                 </svg>
                 <p className="text-sm font-light tracking-wider en">FAQ</p>
