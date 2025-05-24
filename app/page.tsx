@@ -450,7 +450,15 @@ export default function Home() {
               <ModernGallery items={combinedItems} />
             </div>
 
-            <SaunaDetailsEnhanced features={[]} details={saunaDetails} />
+            <SaunaDetailsEnhanced
+              features={[]}
+              details={saunaDetails}
+              tabLabels={{
+                basic: "Info",
+                price: "Pricing",
+                set: "Package",
+              }}
+            />
           </div>
         </section>
 

@@ -28,9 +28,9 @@ export default function SaunaDetailsEnhanced({
   details,
   initialTab = "basic",
   tabLabels = {
-    basic: "基本情報",
-    price: "料金表",
-    set: "セット内容",
+    basic: "Info",
+    price: "Pricing",
+    set: "Package",
   },
 }: SaunaDetailsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -66,8 +66,22 @@ export default function SaunaDetailsEnhanced({
   }
 
   const tabVariants = {
-    inactive: { opacity: 0.7, y: 5 },
-    active: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+    inactive: {
+      opacity: 0.7,
+      y: 5,
+      scale: 1,
+    },
+    active: {
+      opacity: 1,
+      y: 0,
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+      },
+    },
   }
 
   return (
@@ -134,33 +148,63 @@ export default function SaunaDetailsEnhanced({
           animate={isInView ? "visible" : "hidden"}
           className="bg-gray-50 p-8 md:p-12 rounded-lg shadow-sm"
         >
-          <h3 className="text-2xl font-light mb-8 text-zinc-800 jp">サウナ概要</h3>
+          <h3 className="text-3xl md:text-4xl font-light mb-8 text-zinc-800 en">About the SAUNA ROOM</h3>
 
           {/* Tabs */}
           <div className="flex mb-8 border-b border-gray-200">
             <motion.button
               variants={tabVariants}
               animate={activeTab === "basic" ? "active" : "inactive"}
-              className={`py-2 px-4 mr-4 relative ${activeTab === "basic" ? "border-b-2 border-zinc-800" : ""}`}
+              className={`py-3 px-6 mr-6 relative font-light tracking-wider en ${
+                activeTab === "basic" ? "border-b-2 border-zinc-800 text-zinc-800" : "text-zinc-500"
+              }`}
               onClick={() => setActiveTab("basic")}
             >
               {tabLabels.basic}
+              {activeTab === "basic" && (
+                <motion.div
+                  className="absolute inset-0 bg-zinc-100 rounded-t-lg -z-10"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 0.3, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
             </motion.button>
             <motion.button
               variants={tabVariants}
               animate={activeTab === "price" ? "active" : "inactive"}
-              className={`py-2 px-4 mr-4 ${activeTab === "price" ? "border-b-2 border-zinc-800" : ""}`}
+              className={`py-3 px-6 mr-6 relative font-light tracking-wider en ${
+                activeTab === "price" ? "border-b-2 border-zinc-800 text-zinc-800" : "text-zinc-500"
+              }`}
               onClick={() => setActiveTab("price")}
             >
               {tabLabels.price}
+              {activeTab === "price" && (
+                <motion.div
+                  className="absolute inset-0 bg-zinc-100 rounded-t-lg -z-10"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 0.3, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
             </motion.button>
             <motion.button
               variants={tabVariants}
               animate={activeTab === "set" ? "active" : "inactive"}
-              className={`py-2 px-4 mr-4 ${activeTab === "set" ? "border-b-2 border-zinc-800" : ""}`}
+              className={`py-3 px-6 mr-6 relative font-light tracking-wider en ${
+                activeTab === "set" ? "border-b-2 border-zinc-800 text-zinc-800" : "text-zinc-500"
+              }`}
               onClick={() => setActiveTab("set")}
             >
               {tabLabels.set}
+              {activeTab === "set" && (
+                <motion.div
+                  className="absolute inset-0 bg-zinc-100 rounded-t-lg -z-10"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 0.3, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
             </motion.button>
           </div>
 
@@ -202,7 +246,6 @@ export default function SaunaDetailsEnhanced({
                 {/* 料金表（別セクション） */}
                 {priceTable && (
                   <div className="mt-8">
-                    <h4 className="text-lg font-light mb-4 text-zinc-800 jp">{priceTable.title}</h4>
                     <div className="text-zinc-600 jp">{priceTable.content}</div>
                   </div>
                 )}
@@ -220,7 +263,6 @@ export default function SaunaDetailsEnhanced({
                 {/* セット内容 */}
                 {setContents && (
                   <div className="mt-8">
-                    <h4 className="text-lg font-light mb-4 text-zinc-800 jp">{setContents.title}</h4>
                     <div className="text-zinc-600 jp">{setContents.content}</div>
                     <p className="mt-6 text-zinc-500 jp">
                       ※すべてのアイテムは無料でご利用いただけます。手ぶらでお越しいただいても快適にサウナをお楽しみいただけます。
