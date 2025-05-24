@@ -449,6 +449,23 @@ export default function Home() {
             <div className="mb-20">
               <ModernGallery items={combinedItems} />
             </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="scroll-animate bg-gray-50 py-20">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex justify-between items-center mb-16">
+              <div className="flex items-center gap-3">
+                <svg width="16" height="16" viewBox="0 0 8 8" className="fill-black">
+                  <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" />
+                </svg>
+                <p className="section-header en">ABOUT THE SAUNA ROOM</p>
+              </div>
+              <div>
+                <p className="section-number en">02</p>
+              </div>
+            </div>
 
             <SaunaDetailsEnhanced
               features={[]}
@@ -458,12 +475,13 @@ export default function Home() {
                 price: "Pricing",
                 set: "Package",
               }}
+              hideTitle={true}
             />
           </div>
         </section>
 
         {/* Reservation Section */}
-        <section id="reservation" className="scroll-animate bg-gray-50 py-20">
+        <section id="reservation" className="scroll-animate bg-white py-20">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between items-center mb-16">
               <div className="flex items-center gap-3">
@@ -473,7 +491,7 @@ export default function Home() {
                 <p className="section-header en">RESERVATION</p>
               </div>
               <div>
-                <p className="section-number en">02</p>
+                <p className="section-number en">03</p>
               </div>
             </div>
 
@@ -482,7 +500,7 @@ export default function Home() {
         </section>
 
         {/* Enjoy Section */}
-        <section id="enjoy" className="scroll-animate bg-white py-20">
+        <section id="enjoy" className="scroll-animate bg-gray-50 py-20">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between items-center mb-16">
               <div className="flex items-center gap-3">
@@ -492,14 +510,8 @@ export default function Home() {
                 <p className="section-header en">ENJOY</p>
               </div>
               <div>
-                <p className="section-number en">03</p>
+                <p className="section-number en">04</p>
               </div>
-            </div>
-
-            {/* Totonou Loop moved here */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-light mb-8 en">The Totonou Loop:</h2>
-              <p className="text-lg md:text-xl text-zinc-600 en">Sauna　→　Chill　→　Reset　→　Repeat.</p>
             </div>
 
             <LinearEnjoySauna steps={enjoySteps} />
@@ -507,7 +519,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="scroll-animate bg-gray-50 py-20">
+        <section id="faq" className="scroll-animate bg-white py-20">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-between items-center mb-16">
               <div className="flex items-center gap-3">
@@ -517,7 +529,7 @@ export default function Home() {
                 <p className="section-header en">FAQ</p>
               </div>
               <div>
-                <p className="section-number en">04</p>
+                <p className="section-number en">05</p>
               </div>
             </div>
 

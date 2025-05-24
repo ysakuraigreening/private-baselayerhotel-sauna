@@ -48,6 +48,14 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link
+                  href="#about"
+                  className="text-xs text-gray-400 hover:text-white transition-colors font-light tracking-wider uppercase"
+                >
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="#reservation"
                   className="text-xs text-gray-400 hover:text-white transition-colors font-light tracking-wider uppercase"
                 >

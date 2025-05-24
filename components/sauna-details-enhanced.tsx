@@ -21,6 +21,7 @@ interface SaunaDetailsProps {
     price: string
     set: string
   }
+  hideTitle?: boolean
 }
 
 export default function SaunaDetailsEnhanced({
@@ -32,6 +33,7 @@ export default function SaunaDetailsEnhanced({
     price: "Pricing",
     set: "Package",
   },
+  hideTitle = false,
 }: SaunaDetailsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, amount: 0.2 })
@@ -148,7 +150,9 @@ export default function SaunaDetailsEnhanced({
           animate={isInView ? "visible" : "hidden"}
           className="bg-gray-50 p-8 md:p-12 rounded-lg shadow-sm"
         >
-          <h3 className="text-3xl md:text-4xl font-light mb-8 text-zinc-800 en">About the SAUNA ROOM</h3>
+          {!hideTitle && (
+            <h3 className="text-3xl md:text-4xl font-light mb-8 text-zinc-800 en">About the SAUNA ROOM</h3>
+          )}
 
           {/* Tabs */}
           <div className="flex mb-8 border-b border-gray-200">

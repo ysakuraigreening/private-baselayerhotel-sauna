@@ -32,6 +32,14 @@ export default function SiteHeader() {
                 </li>
                 <li>
                   <Link
+                    href="#about"
+                    className="text-white text-xs font-light tracking-wider hover:opacity-80 transition-opacity uppercase"
+                  >
+                    ABOUT
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="#reservation"
                     className="text-white text-xs font-light tracking-wider hover:opacity-80 transition-opacity uppercase"
                   >
@@ -108,6 +116,15 @@ export default function SiteHeader() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     SAUNA
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#about"
+                    className="text-white text-lg font-light tracking-wider uppercase"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    ABOUT
                   </Link>
                 </li>
                 <li>
