@@ -50,7 +50,7 @@ export default function Home() {
       title: "Sauna",
       description:
         "HARVIA製のストーブがじんわりと体を温めます。体が温まったら、Athletiaのオイルが入ったロウリュ水で香りもお楽しみください。",
-      imageUrl: "/placeholder.svg?height=400&width=300&query=sauna heater steam",
+      imageUrl: "/sauna-image.jpg",
     },
     {
       id: "step-2",
@@ -58,7 +58,7 @@ export default function Home() {
       title: "Cold Bath",
       description:
         "体が十分に温まったら、水風呂コーナーへ。製氷機も設置していますので、氷入りのキンキンな水風呂にアレンジも可能です。",
-      imageUrl: "/placeholder.svg?height=400&width=300&query=cold plunge pool",
+      imageUrl: "/coldbath-image.jpg",
     },
     {
       id: "step-3",
@@ -66,7 +66,7 @@ export default function Home() {
       title: "Totonou",
       description:
         "水風呂のあとは整いスペースへ。足を広々と伸ばせるチェアと、冷蔵庫やテレビも完備。名古屋の街中とは思えない解放感をお楽しみください。",
-      imageUrl: "/saunaroom-image.jpg",
+      imageUrl: "/totonoi-image.jpg",
     },
     {
       id: "step-4",
@@ -74,7 +74,7 @@ export default function Home() {
       title: "Repeat",
       description:
         "サウナ→水風呂→休憩のサイクルを繰り返すことで、より深いリラクゼーションを体験できます。自分のペースで何度でも繰り返しましょう。",
-      imageUrl: "/placeholder.svg?height=400&width=300&query=sauna cycle repeat",
+      imageUrl: "/heater-image.jpg",
     },
   ]
 
@@ -83,18 +83,18 @@ export default function Home() {
       title: "Harbiaサウナストーブ",
       description:
         "フィンランド製の高品質Harbiaサウナヒーターを導入。均一で心地よい熱波（ロウリュ）が、本場さながらの体験を提供します。",
-      imageUrl: "/placeholder.svg?height=240&width=400&query=sauna heater",
+      imageUrl: "/heater-image.jpg",
     },
     {
       title: "整いスペース",
       description: "サウナと水風呂の間に設けられた専用の休憩スペース。ゆったりとした空間で「ととのい」を体感できます。",
-      imageUrl: "/saunaroom-image.jpg",
+      imageUrl: "/totonoi-image.jpg",
     },
     {
       title: "滞在型サウナ",
       description:
         "通常のサウナとは異なり、長時間滞在できる設計。サウナ、水風呂、休憩を自分のペースで繰り返し楽しめます。",
-      imageUrl: "/concept-image.jpg",
+      imageUrl: "/sauna2-image.jpg",
     },
   ]
 
@@ -285,7 +285,7 @@ export default function Home() {
       title: "FRUIT OF THE LOOMS オリジナルタオル",
       description:
         "大人気のベーシックアパレル/アンダーウェアメーカーであるFRUIT OF THE LOOMSとのコラボレーションアイテムをサウナルームでもご利用いただけます。バスタオル・フェイスタオルともにご用意がございます。",
-      imageUrl: "/placeholder.svg?height=400&width=400&query=premium towels",
+      imageUrl: "/fruit-image.jpg",
       size: "medium" as const,
     },
     {
@@ -294,7 +294,7 @@ export default function Home() {
       title: "Athletia アメニティ",
       description:
         "「balance your active / relaxing cycle」をコンセプトにスキンケア商品を展開するAthletiaのアメニティを、サウナルームではボディケアアイテムだけでなくスキンケアアイテム全般にわたり導入。",
-      imageUrl: "/placeholder.svg?height=400&width=400&query=athletia amenities",
+      imageUrl: "/athletia-image.jpg",
       size: "small" as const,
     },
     {
@@ -303,7 +303,7 @@ export default function Home() {
       title: "Cado ドライヤー",
       description:
         "美しいフォルムやデザインだけでなく、その実用性も魅力のCadoアイテム。今回サウナルームにはバトン型のドライヤーを導入。パワフルな風量で、アフターサウナの準備時間もストレスフリーに。",
-      imageUrl: "/placeholder.svg?height=400&width=400&query=cado hair dryer",
+      imageUrl: "/cado-image.jpg",
       size: "medium" as const,
     },
     {
@@ -432,9 +432,9 @@ export default function Home() {
             <div className="max-w-4xl mx-auto mb-20">
               <ImageSlideshow
                 images={[
-                  { src: "/concept-image.jpg", alt: "サウナルーム" },
-                  { src: "/placeholder.svg?height=500&width=800&query=harvia sauna heater", alt: "サウナヒーター" },
-                  { src: "/placeholder.svg?height=500&width=800&query=sauna relaxation area", alt: "整いスペース" },
+                  { src: "/sauna-image.jpg", alt: "サウナルーム" },
+                  { src: "/heater-image.jpg", alt: "サウナヒーター" },
+                  { src: "/totonoi-image.jpg", alt: "整いスペース" },
                 ]}
               />
             </div>
