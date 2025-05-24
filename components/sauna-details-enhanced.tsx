@@ -87,7 +87,7 @@ export default function SaunaDetailsEnhanced({
   }
 
   return (
-    <div ref={containerRef} className="relative py-20">
+    <div ref={containerRef} className="relative">
       <div className="container mx-auto px-4">
         {/* Features */}
         <motion.div
