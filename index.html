@@ -15,15 +15,45 @@
                 SAUNA ROOM<br>
                 <span class="small">(BASE LAYER HOTEL)</span>
             </a>
-            <nav class="nav">
+            <nav class="nav desktop-nav">
                 <a href="#sauna">SAUNA</a>
                 <a href="#about">ABOUT</a>
                 <a href="#reservation">RESERVATION</a>
                 <a href="#enjoy">ENJOY</a>
                 <a href="#faq">FAQ</a>
             </nav>
+            <div class="header-controls">
+                <div class="lang-switcher desktop-lang">
+                    <button class="lang-btn active" data-lang="jp">JP</button>
+                    <span>|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <button class="mobile-menu-close">×</button>
+            <nav class="mobile-nav">
+                <a href="#sauna">SAUNA</a>
+                <a href="#about">ABOUT</a>
+                <a href="#reservation">RESERVATION</a>
+                <a href="#enjoy">ENJOY</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="mobile-lang">
+                <button class="lang-btn active" data-lang="jp">JP</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Floating Reservation Button -->
     <div class="floating-reservation">
@@ -64,63 +94,64 @@
             </div>
 
             <div class="gallery">
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=Harbiaサウナストーブ" alt="Harbiaサウナストーブ">
+                <div class="gallery-item medium" data-delay="0">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/heater-image.jpg-QlCrnGmlbmm0vqUvtbnedVThbYKVMg.jpeg" alt="Harbiaサウナストーブ">
                     <div class="gallery-overlay">
                         <div class="gallery-number">01</div>
                         <h3 class="gallery-title jp">Harbiaサウナストーブ</h3>
                         <p class="gallery-description jp">フィンランド製の高品質Harbiaサウナヒーターを導入。本場さながらの体験を提供します。</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=トトノイスペース" alt="トトノイスペース">
+                <div class="gallery-item medium" data-delay="100">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/totonoi-image.jpg-0bQKKCi1UWLd1chfPdINpwSinYgVom.jpeg" alt="整いスペース">
                     <div class="gallery-overlay">
                         <div class="gallery-number">02</div>
-                        <h3 class="gallery-title jp">トトノイスペース</h3>
+                        <h3 class="gallery-title jp">整いスペース</h3>
                         <p class="gallery-description jp">サウナと水風呂の間に設けられた専用の休憩スペース。「ととのい」を体感できます。</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=滞在型サウナ" alt="滞在型サウナ">
+                <div class="gallery-item medium" data-delay="200">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sauna2-imaeg.jpg-muccfKiFLFfQTYMSiJ19eLgS4cz23U.jpeg" alt="滞在型サウナ">
                     <div class="gallery-overlay">
                         <div class="gallery-number">03</div>
                         <h3 class="gallery-title jp">滞在型サウナ</h3>
                         <p class="gallery-description jp">長時間滞在できる設計。サウナ、水風呂、休憩を自分のペースで繰り返し楽しめます。</p>
                     </div>
                 </div>
-                <div class="gallery-item large">
-                    <img src="/placeholder.svg?height=400&width=800&text=SAUNAROOM マップ" alt="SAUNAROOM マップ">
+                <div class="gallery-item large no-hover" data-delay="300">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2SA.jpg-bdYaGSdrAe6E3LFhgV0wpPsXbONM0A.jpeg" alt="フロアプラン">
                     <div class="gallery-overlay">
                         <div class="gallery-number">04</div>
-                        <h3 class="gallery-title jp">SAUNAROOM マップ</h3>
+                        <h3 class="gallery-title jp"></h3>
+                        <p class="gallery-description jp"></p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=オリジナルタオル" alt="FRUIT OF THE LOOMS オリジナルタオル">
+                <div class="gallery-item medium" data-delay="400">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fruit-image.jpg-m60vt3sWmgx6HqHoHy6b8BYmwkKsMH.jpeg" alt="FRUIT OF THE LOOMS オリジナルタオル">
                     <div class="gallery-overlay">
                         <div class="gallery-number">05</div>
                         <h3 class="gallery-title jp">FRUIT OF THE LOOMS オリジナルタオル</h3>
                         <p class="gallery-description jp">人気のFRUIT OF THE LOOMSとのコラボレーションアイテム。バスタオル・フェイスタオルをご用意。</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=Athletia アメニティ" alt="Athletia アメニティ">
+                <div class="gallery-item small" data-delay="500">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/athletia-image.jpg-uHlP9RDPLiSHc1xv3HETJgvCcb0ETT.jpeg" alt="Athletia アメニティ">
                     <div class="gallery-overlay">
                         <div class="gallery-number">06</div>
                         <h3 class="gallery-title jp">Athletia アメニティ</h3>
                         <p class="gallery-description jp">「balance your active / relaxing cycle」をコンセプトにしたAthletiaのアメニティを完備。</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=Cado ドライヤー" alt="Cado ドライヤー">
+                <div class="gallery-item small" data-delay="600">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cado-image.jpg-3bU44tUIcuOthxv3V3J9BfU8GC1KWA.jpeg" alt="Cado ドライヤー">
                     <div class="gallery-overlay">
                         <div class="gallery-number">07</div>
                         <h3 class="gallery-title jp">Cado ドライヤー</h3>
                         <p class="gallery-description jp">美しいフォルムと実用性を兼ね備えたCadoのバトン型ドライヤーを導入。</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=オリジナルサウナウェア" alt="オリジナルサウナウェア">
+                <div class="gallery-item medium" data-delay="700">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/saunaweare-image-oODPxJeES4yA8eogMARRi3NzLEHpvm.png" alt="オリジナルサウナウェア">
                     <div class="gallery-overlay">
                         <div class="gallery-number">08</div>
                         <h3 class="gallery-title jp">オリジナルサウナウェア</h3>
@@ -148,9 +179,158 @@
                 <h2 class="en">ABOUT THE SAUNA ROOM</h2>
             </div>
 
-            <div class="content-text">
-                <p class="jp">完全事前予約制のプライベートサウナルーム。BASE LAYER HOTEL 2階に位置し、最大2名様までご利用いただけます。</p>
-                <p class="jp">手ぶらでお越しいただけるよう、タオル、サウナウェア、Athletiaアメニティ一式をご用意しております。</p>
+            <div class="sauna-details">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="info">Info</button>
+                    <button class="tab-btn" data-tab="pricing">Pricing</button>
+                    <button class="tab-btn" data-tab="package">Package</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-panel active" id="info-panel">
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <h4 class="jp">ご利用方法</h4>
+                                <p class="jp">完全事前予約制</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 class="jp">場所</h4>
+                                <p class="jp">BASE LAYER HOTEL 2階</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 class="jp">ご利用人数</h4>
+                                <p class="jp">最大2名様まで</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 class="jp">利用枠</h4>
+                                <ul class="jp">
+                                    <li>7:00 - 9:30</li>
+                                    <li>15:30 - 18:00</li>
+                                    <li>19:00 - 21:30</li>
+                                    <li>22:30 - 0:30</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="pricing-panel">
+                        <div class="pricing-tables">
+                            <div class="pricing-table">
+                                <h4 class="jp">平日</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="jp">営業時間</th>
+                                            <th class="jp">人数</th>
+                                            <th class="jp">料金</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="2" class="jp">7:00-10:00</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥6,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥7,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" class="jp">15:30-18:00</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥8,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥9,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" class="jp">19:00-21:30</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥9,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥10,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" class="jp">22:30-01:00</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥8,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥9,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="pricing-table">
+                                <h4 class="jp">金・土</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="jp">営業時間</th>
+                                            <th class="jp">人数</th>
+                                            <th class="jp">料金</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="2" class="jp">7:00-10:00</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥8,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥9,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" class="jp">15:30-18:00</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥10,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥11,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" class="jp">19:00-21:30</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥11,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥12,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" class="jp">22:30-01:00</td>
+                                            <td class="jp">1名</td>
+                                            <td class="jp">¥10,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="jp">2名</td>
+                                            <td class="jp">¥11,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="package-panel">
+                        <div class="package-content">
+                            <ul class="jp">
+                                <li>タオル（バスタオル・フェイスタオル）</li>
+                                <li>Athletiaアメニティ一式</li>
+                                <li>ミネラルウォーター</li>
+                                <li>サウナハット</li>
+                            </ul>
+                            <p class="package-note jp">※すべてのアイテムは無料でご利用いただけます。手ぶらでお越しいただいても快適にサウナをお楽しみいただけます。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -172,69 +352,108 @@
                 <h2 class="en">SAUNA RESERVATION</h2>
             </div>
 
-            <!-- Reservation Steps -->
-            <div class="reservation-steps">
-                <div class="step-item">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">予約ページへ</h3>
-                        <p class="step-description jp">RESERVATIONボタンから予約ページにアクセスします。</p>
+            <div class="reservation-flow">
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-progress"></div>
+                    
+                    <div class="step-item" data-step="1">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">01</div>
+                            <h3 class="step-title jp">予約ページへ</h3>
+                            <div class="step-description">
+                                <p class="jp">公式サイトのRESERVATIONボタンから予約システムにアクセスします。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">日時・部屋を選択</h3>
-                        <p class="step-description jp">カレンダーから希望する日付と時間帯を選択し、２つのサウナルームタイプからお選びください。</p>
+
+                    <div class="step-item" data-step="2">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">02</div>
+                            <h3 class="step-title jp">日時・部屋を選択</h3>
+                            <div class="step-description">
+                                <p class="jp">カレンダーから希望する日付と時間帯を選択し、お好みのサウナルームタイプをお選びください。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">情報を入力</h3>
-                        <p class="step-description jp">予約に必要な氏名、連絡先などの情報を入力します。</p>
+
+                    <div class="step-item" data-step="3">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">03</div>
+                            <h3 class="step-title jp">情報を入力</h3>
+                            <div class="step-description">
+                                <p class="jp">予約に必要な氏名、連絡先などの情報を入力します。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">内容を確認</h3>
-                        <p class="step-description jp">選択した日時、料金を最終確認します。</p>
+
+                    <div class="step-item" data-step="4">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">04</div>
+                            <h3 class="step-title jp">内容を確認</h3>
+                            <div class="step-description">
+                                <p class="jp">選択した施設、日時、料金を最終確認します。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">決済</h3>
-                        <p class="step-description jp">予約時にオンラインでの事前クレジットカード決済が行えます。</p>
+
+                    <div class="step-item" data-step="5">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">05</div>
+                            <h3 class="step-title jp">決済</h3>
+                            <div class="step-description">
+                                <p class="jp">クレジットカードまたは電子マネーで決済を行います。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">06</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">予約完了</h3>
-                        <p class="step-description jp">予約完了メールを受信し、準備を整えます。</p>
+
+                    <div class="step-item" data-step="6">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">06</div>
+                            <h3 class="step-title jp">予約完了</h3>
+                            <div class="step-description">
+                                <p class="jp">予約完了メールを受信し、当日の準備を整えます。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">07</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">フロント受付（5分前）</h3>
-                        <p class="step-description jp">予約時間の5分前までにホテルフロントにお越しください。</p>
+
+                    <div class="step-item" data-step="7">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">07</div>
+                            <h3 class="step-title jp">フロント受付（5分前）</h3>
+                            <div class="step-description">
+                                <p class="jp">予約時間の5分前までにホテルフロントにお越しください。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">08</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">規約確認・アメニティ受取</h3>
-                        <p class="step-description jp">フロントスタッフが利用規約をご説明し、タオルやアメニティをお渡しします。</p>
+
+                    <div class="step-item" data-step="8">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">08</div>
+                            <h3 class="step-title jp">規約確認・アメニティ受取</h3>
+                            <div class="step-description">
+                                <p class="jp">フロントスタッフが利用規約をご説明し、タオルやアメニティをお渡しします。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">09</div>
-                    <div class="step-content">
-                        <h3 class="step-title jp">サウナ利用開始</h3>
-                        <p class="step-description jp">心身ともにリラックスして、至福のひとときをお過ごしください。</p>
+
+                    <div class="step-item" data-step="9">
+                        <div class="step-dot"></div>
+                        <div class="step-content">
+                            <div class="step-number en">09</div>
+                            <h3 class="step-title jp">サウナ利用開始</h3>
+                            <div class="step-description">
+                                <p class="jp">心身ともにリラックスして、至福のひとときをお過ごしください。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -258,38 +477,49 @@
                 <h2 class="en">TOTONOU CYCLE</h2>
             </div>
 
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=Sauna" alt="Sauna">
-                    <div class="gallery-overlay">
-                        <div class="gallery-number">01</div>
-                        <h3 class="gallery-title en">Sauna</h3>
-                        <p class="gallery-description jp">HARVIA製のストーブで体を温めます。Athletiaのオイル入りロウリュ水で香りもお楽しみください。</p>
+            <div class="enjoy-steps">
+                <div class="enjoy-step" data-delay="0">
+                    <div class="enjoy-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sauna-image.jpg-p9s2ltsRrlW3bG1JiwIPQ85RwaIn8a.jpeg" alt="Sauna">
+                        <div class="enjoy-overlay">
+                            <div class="enjoy-number en">01</div>
+                            <h3 class="enjoy-title en">Sauna</h3>
+                        </div>
                     </div>
+                    <p class="enjoy-description jp">HARVIA製のストーブで体を温めます。Athletiaのオイル入りロウリュ水で香りもお楽しみください。</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=Cold Bath" alt="Cold Bath">
-                    <div class="gallery-overlay">
-                        <div class="gallery-number">02</div>
-                        <h3 class="gallery-title en">Cold Bath</h3>
-                        <p class="gallery-description jp">体が十分に温まったら水風呂へ。製氷機完備で、氷入りのキンキンな水風呂も可能です。</p>
+
+                <div class="enjoy-step" data-delay="100">
+                    <div class="enjoy-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coldbath-image.jpg-VJKqanZJ8Ap5nKiHozM3vsKxYTbiWm.jpeg" alt="Cold Bath">
+                        <div class="enjoy-overlay">
+                            <div class="enjoy-number en">02</div>
+                            <h3 class="enjoy-title en">Cold Bath</h3>
+                        </div>
                     </div>
+                    <p class="enjoy-description jp">体が十分に温まったら水風呂へ。製氷機完備で、氷入りのキンキンな水風呂も可能です。</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=Totonou" alt="Totonou">
-                    <div class="gallery-overlay">
-                        <div class="gallery-number">03</div>
-                        <h3 class="gallery-title en">Totonou</h3>
-                        <p class="gallery-description jp">水風呂のあとは整いスペースへ。足を伸ばせるチェアと冷蔵庫、テレビも完備。</p>
+
+                <div class="enjoy-step" data-delay="200">
+                    <div class="enjoy-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/totonoi-image.jpg-0bQKKCi1UWLd1chfPdINpwSinYgVom.jpeg" alt="Totonou">
+                        <div class="enjoy-overlay">
+                            <div class="enjoy-number en">03</div>
+                            <h3 class="enjoy-title en">Totonou</h3>
+                        </div>
                     </div>
+                    <p class="enjoy-description jp">水風呂のあとは整いスペースへ。足を伸ばせるチェアと冷蔵庫、テレビも完備。</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=400&width=400&text=Repeat" alt="Repeat">
-                    <div class="gallery-overlay">
-                        <div class="gallery-number">04</div>
-                        <h3 class="gallery-title en">Repeat</h3>
-                        <p class="gallery-description jp">サウナ→水風呂→休憩のサイクルを繰り返すことで、より深いリラクゼーションを体験できます。</p>
+
+                <div class="enjoy-step" data-delay="300">
+                    <div class="enjoy-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/heater-image.jpg-QlCrnGmlbmm0vqUvtbnedVThbYKVMg.jpeg" alt="Repeat">
+                        <div class="enjoy-overlay">
+                            <div class="enjoy-number en">04</div>
+                            <h3 class="enjoy-title en">Repeat</h3>
+                        </div>
                     </div>
+                    <p class="enjoy-description jp">サウナ→水風呂→休憩のサイクルを繰り返すことで、より深いリラクゼーションを体験できます。</p>
                 </div>
             </div>
         </div>
@@ -310,20 +540,53 @@
 
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question jp">予約はどのように行えばよいですか？</button>
-                    <div class="faq-answer jp">こちらのウェブサイトからRESERVATIONへ進みご予約を受け付けております。</div>
+                    <button class="faq-question jp">
+                        予約はどのように行えばよいですか？
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="jp">ウェブサイトの予約フォーム、またはお電話にて承っております。ご利用の3日前までのご予約をおすすめしております。</p>
+                    </div>
                 </div>
+
                 <div class="faq-item">
-                    <button class="faq-question jp">持ち物は何が必要ですか？</button>
-                    <div class="faq-answer jp">手ぶらでお越しいただけます。タオル、サウナウェア、アメニティ類はすべてご用意しております。</div>
+                    <button class="faq-question jp">
+                        初めてのサウナですが大丈夫でしょうか？
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="jp">スタッフが丁寧にご案内いたしますので、初めての方でも安心してご利用いただけます。サウナの温度や時間など、お好みに合わせてアドバイスもさせていただきます。</p>
+                    </div>
                 </div>
+
                 <div class="faq-item">
-                    <button class="faq-question jp">サウナの温度は調整できますか？</button>
-                    <div class="faq-answer jp">申し訳ございません。温度は90℃で固定とさせていただいております。</div>
+                    <button class="faq-question jp">
+                        持ち物は何が必要ですか？
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="jp">手ぶらでお越しいただけます。タオル、サウナウェア、アメニティ類はすべてご用意しております。</p>
+                    </div>
                 </div>
+
                 <div class="faq-item">
-                    <button class="faq-question jp">キャンセルポリシーを教えてください</button>
-                    <div class="faq-answer jp">ご予約後のキャンセルは100％掛かりますのでご注意ください。</div>
+                    <button class="faq-question jp">
+                        サウナの温度は調整できますか？
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="jp">お客様のご希望に合わせて温度調整が可能です。ご予約時またはご利用開始時にスタッフにお申し付けください。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question jp">
+                        キャンセルポリシーを教えてください
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="jp">ご予約日の2日前までのキャンセルは無料です。前日のキャンセルは料金の50%、当日のキャンセルは100%のキャンセル料が発生いたします。</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -343,7 +606,7 @@
                 <div class="footer-info">
                     <div class="footer-section">
                         <h4>ADDRESS</h4>
-                        <p>2F 2-6-30 NISHIKI, NAKA-KU, NAGOYA, AICHI 460-0003</p>
+                        <p>2-6-30 NISHIKI, NAKA-KU, NAGOYA, AICHI 460-0003</p>
                     </div>
                     <div class="footer-section">
                         <h4>ACCESS</h4>
@@ -357,6 +620,8 @@
                     <a href="#reservation">RESERVATION</a>
                     <a href="#enjoy">ENJOY</a>
                     <a href="#faq">FAQ</a>
+                    <a href="#terms">TERMS OF SERVICE</a>
+                    <a href="#privacy">PRIVACY POLICY</a>
                 </div>
             </div>
 

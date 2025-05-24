@@ -48,11 +48,11 @@ export default function Home() {
   const reservationSteps = [
     {
       title: "予約ページへ",
-      description: "RESERVATIONボタンから予約ページにアクセスします。",
+      description: "公式サイトのRESERVATIONボタンから予約システムにアクセスします。",
     },
     {
       title: "日時・部屋を選択",
-      description: "カレンダーから希望する日付と時間帯を選択し、２つのサウナルームタイプからお選びください。",
+      description: "カレンダーから希望する日付と時間帯を選択し、お好みのサウナルームタイプをお選びください。",
     },
     {
       title: "情報を入力",
@@ -60,15 +60,15 @@ export default function Home() {
     },
     {
       title: "内容を確認",
-      description: "選択した日時、料金を最終確認します。",
+      description: "選択した施設、日時、料金を最終確認します。",
     },
     {
       title: "決済",
-      description: "予約時にオンラインでの事前クレジットカード決済が行えます。",
+      description: "クレジットカードまたは電子マネーで決済を行います。",
     },
     {
       title: "予約完了",
-      description: "予約完了メールを受信し、準備を整えます。",
+      description: "予約完了メールを受信し、当日の準備を整えます。",
     },
     {
       title: "フロント受付（5分前）",
@@ -127,7 +127,7 @@ export default function Home() {
     {
       id: "feature-2",
       number: "02",
-      title: "トトノイスペース",
+      title: "整いスペース",
       description: "サウナと水風呂の間に設けられた専用の休憩スペース。「ととのい」を体感できます。",
       imageUrl: "/totonoi-image.jpg",
       size: "medium" as const,
@@ -143,7 +143,7 @@ export default function Home() {
     {
       id: "floorplan",
       number: "04",
-      title: "SAUNAROOM マップ",
+      title: "",
       description: "",
       imageUrl: "/sauna-floorplan.jpg",
       size: "large" as const,
@@ -357,7 +357,13 @@ export default function Home() {
   const faqItems = [
     {
       question: "予約はどのように行えばよいですか？",
-      answer: "こちらのウェブサイトからRESERVATIONへ進みご予約を受け付けております。",
+      answer:
+        "ウェブサイトの予約フォーム、またはお電話にて承っております。ご利用の3日前までのご予約をおすすめしております。",
+    },
+    {
+      question: "初めてのサウナですが大丈夫でしょうか？",
+      answer:
+        "スタッフが丁寧にご案内いたしますので、初めての方でも安心してご利用いただけます。サウナの温度や時間など、お好みに合わせてアドバイスもさせていただきます。",
     },
     {
       question: "持ち物は何が必要ですか？",
@@ -365,11 +371,12 @@ export default function Home() {
     },
     {
       question: "サウナの温度は調整できますか？",
-      answer: "申し訳ございません。温度は90℃で固定とさせていただいております。",
+      answer: "お客様のご希望に合わせて温度調整が可能です。ご予約時またはご利用開始時にスタッフにお申し付けください。",
     },
     {
       question: "キャンセルポリシーを教えてください",
-      answer: "ご予約後のキャンセルは100％掛かりますのでご注意ください。",
+      answer:
+        "ご予約日の2日前までのキャンセルは無料です。前日のキャンセルは料金の50%、当日のキャンセルは100%のキャンセル料が発生いたします。",
     },
   ]
 
@@ -433,9 +440,7 @@ export default function Home() {
               <div className="space-y-4 jp">
                 <p className="content-text">ご宿泊者様限定の完全予約制プライベートサウナルーム。</p>
                 <p className="content-text">
-                  オート＆セルフロウリュが楽しめるサウナと整いスペースを併設。
-                  <br />
-                  オリジナルサウナウェアやAthletiaアメニティも完備。
+                  オート＆セルフロウリュが楽しめるサウナと整いスペースを併設。オリジナルサウナウェアやAthletiaアメニティも完備。
                 </p>
               </div>
             </div>

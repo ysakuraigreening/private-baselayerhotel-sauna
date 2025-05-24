@@ -20,7 +20,7 @@ export default function SiteFooter() {
               <li>
                 <p className="head text-xs font-light mb-2 tracking-wider uppercase text-gray-300">ADDRESS</p>
                 <p className="detail text-xs text-gray-400 font-light tracking-wide">
-                  2F 2-6-30 NISHIKI, NAKA-KU, NAGOYA, AICHI 460-0003
+                  2-6-30 NISHIKI, NAKA-KU, NAGOYA, AICHI 460-0003
                 </p>
               </li>
               <li>
@@ -76,6 +76,22 @@ export default function SiteFooter() {
                   className="text-xs text-gray-400 hover:text-white transition-colors font-light tracking-wider uppercase"
                 >
                   FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms-of-service"
+                  className="text-xs text-gray-400 hover:text-white transition-colors font-light tracking-wider uppercase"
+                >
+                  TERMS OF SERVICE
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-xs text-gray-400 hover:text-white transition-colors font-light tracking-wider uppercase"
+                >
+                  PRIVACY POLICY
                 </Link>
               </li>
             </ul>
