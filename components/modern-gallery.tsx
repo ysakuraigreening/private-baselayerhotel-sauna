@@ -11,6 +11,7 @@ interface GalleryItem {
   description: string
   imageUrl: string
   size?: "small" | "medium" | "large"
+  noHover?: boolean
 }
 
 interface ModernGalleryProps {
@@ -49,22 +50,28 @@ export default function ModernGallery({ items }: ModernGalleryProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative group overflow-hidden ${sizeClasses}`}
+              className={`relative ${item.noHover ? "" : "group"} overflow-hidden ${sizeClasses}`}
             >
               <div className="relative w-full h-full aspect-square">
                 <Image
                   src={item.imageUrl || "/placeholder.svg"}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={`object-cover transition-transform duration-700 ${item.noHover ? "" : "group-hover:scale-105"}`}
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-300 group-hover:bg-opacity-40" />
+                <div
+                  className={`absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-300 ${item.noHover ? "" : "group-hover:bg-opacity-40"}`}
+                />
 
                 <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                  <div className="transform transition-transform duration-300 group-hover:translate-y-0 translate-y-4">
+                  <div
+                    className={`transform transition-transform duration-300 ${item.noHover ? "" : "group-hover:translate-y-0 translate-y-4"}`}
+                  >
                     <div className="text-sm font-light mb-2 opacity-80">{item.number}</div>
-                    <h3 className="text-xl font-light mb-2">{item.title}</h3>
-                    <p className="text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-w-xs">
+                    <h3 className="text-xl font-light mb-2 jp">{item.title}</h3>
+                    <p
+                      className={`text-sm font-light max-w-xs jp ${item.noHover ? "opacity-100" : "opacity-0 group-hover:opacity-100 transition-opacity duration-300"}`}
+                    >
                       {item.description}
                     </p>
                   </div>

@@ -13,8 +13,10 @@ export default function SiteHeader() {
         <div className="wrap">
           <div className="inner flex justify-between items-center py-5 px-5">
             <div className="logo">
-              <Link href="/" className="text-white font-light text-lg tracking-wider">
-                ※BLH
+              <Link href="/" className="text-white font-light text-sm tracking-wider en">
+                SAUNA ROOM
+                <br />
+                (BASE LAYER HOTEL)
               </Link>
             </div>
 

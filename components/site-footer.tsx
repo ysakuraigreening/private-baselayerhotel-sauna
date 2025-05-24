@@ -8,7 +8,11 @@ export default function SiteFooter() {
       <div className="wrap">
         <div className="inner container mx-auto px-4">
           <div className="logo mb-8">
-            <div className="text-white font-light text-lg tracking-wider">※BLH</div>
+            <div className="text-white font-light text-sm tracking-wider en">
+              SAUNA ROOM
+              <br />
+              (BASE LAYER HOTEL)
+            </div>
           </div>
 
           <div className="info grid grid-cols-1 md:grid-cols-2 gap-8">

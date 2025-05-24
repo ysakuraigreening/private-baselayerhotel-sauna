@@ -155,6 +155,7 @@ export default function Home() {
       description: "",
       imageUrl: "/sauna-floorplan.jpg",
       size: "large" as const,
+      noHover: true,
     },
     {
       id: "amenity-2",
@@ -444,7 +445,11 @@ export default function Home() {
             </div>
 
             <div className="text-center mb-16">
-              <h2 className="content-title text-xl md:text-2xl font-light mb-6 jp">プライベートサウナルーム</h2>
+              <h2 className="content-title text-xl md:text-2xl font-light mb-6 en">
+                SAUNAROOM
+                <br />
+                (BASE LAYER HOTEL)
+              </h2>
             </div>
 
             <div className="max-w-3xl mx-auto mb-16 text-center px-4">
