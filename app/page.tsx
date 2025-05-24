@@ -518,6 +518,10 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-light mb-6 en">Embrace the Totonou Cycle</h2>
+            </div>
+
             <LinearEnjoySauna steps={enjoySteps} />
           </div>
         </section>
