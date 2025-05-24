@@ -5,389 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAUNA ROOM (BASE LAYER HOTEL)</title>
     <meta name="description" content="Private Sauna for Urban Minds.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-            line-height: 1.6;
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        .en {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .jp {
-            font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", "Takao", "IPAexGothic", "IPAPGothic", "VL PGothic", "Noto Sans CJK JP", sans-serif;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background-color: #000000;
-            padding: 20px;
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-        }
-
-        .logo .small {
-            font-size: 12px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        .nav a {
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: opacity 0.3s;
-        }
-
-        .nav a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background-image: url('hero-sauna-image.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .hero-content {
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.125rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        /* Section */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section.gray {
-            background-color: #f9fafb;
-        }
-
-        .container {
-            max-width: 1152px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 48px;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-title-text {
-            font-size: 12px;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .section-number {
-            font-size: 12px;
-            font-weight: 300;
-            color: #666666;
-        }
-
-        .content-title {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .content-title h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 8px;
-        }
-
-        .content-title h3 {
-            font-size: 1.125rem;
-            font-weight: 300;
-        }
-
-        .content-text {
-            max-width: 768px;
-            margin: 0 auto 64px;
-            text-align: center;
-        }
-
-        .content-text p {
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.7;
-            color: #333333;
-            margin-bottom: 16px;
-        }
-
-        /* Gallery Grid */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4px;
-            margin-bottom: 80px;
-        }
-
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 24px;
-            color: #ffffff;
-        }
-
-        .gallery-number {
-            font-size: 14px;
-            font-weight: 300;
-            margin-bottom: 8px;
-            opacity: 0.8;
-        }
-
-        .gallery-title {
-            font-size: 20px;
-            font-weight: 300;
-            margin-bottom: 8px;
-        }
-
-        .gallery-description {
-            font-size: 14px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        /* FAQ */
-        .faq-item {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 16px 0;
-        }
-
-        .faq-question {
-            font-size: 18px;
-            font-weight: 300;
-            color: #1f2937;
-            margin-bottom: 8px;
-        }
-
-        .faq-answer {
-            font-size: 14px;
-            font-weight: 300;
-            color: #6b7280;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 64px 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 32px;
-        }
-
-        .footer-info h4 {
-            font-size: 12px;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #d1d5db;
-            margin-bottom: 8px;
-        }
-
-        .footer-info p {
-            font-size: 12px;
-            font-weight: 300;
-            color: #9ca3af;
-            line-height: 1.5;
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-        }
-
-        .footer-links a {
-            font-size: 12px;
-            font-weight: 300;
-            color: #9ca3af;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
-        }
-
-        .footer-copy {
-            border-top: 1px solid #374151;
-            padding-top: 32px;
-        }
-
-        .footer-copy p {
-            font-size: 12px;
-            font-weight: 300;
-            color: #6b7280;
-            text-transform: uppercase;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.875rem;
-            }
-
-            .content-title h2 {
-                font-size: 1.5rem;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Floating Reservation Button */
-        .floating-reservation {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            z-index: 40;
-        }
-
-        .reservation-btn {
-            background-color: #15803d;
-            color: #ffffff;
-            padding: 12px 24px;
-            font-size: 12px;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .reservation-btn:hover {
-            background-color: #166534;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -505,8 +123,94 @@
         </div>
     </section>
 
+    <!-- Reservation Section -->
+    <section id="reservation" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <svg width="16" height="16" viewBox="0 0 8 8">
+                        <path d="M8,3.6H5.2L5.2,3.4l1.9-1.9L6.5,0.9L4.6,2.8L4.4,2.8V0H3.6v2.8L3.4,2.8L1.5,0.9L0.9,1.5l1.9,1.9L2.8,3.6H0v0.9h2.8l0.1,0.1L0.9,6.5l0.6,0.6l1.9-1.9l0.1,0.1V8h0.9V5.2l0.1-0.1l1.9,1.9l0.6-0.6L5.2,4.6l0.1-0.1H8V3.6z" fill="black"/>
+                    </svg>
+                    <p class="section-title-text en">RESERVATION</p>
+                </div>
+                <div class="section-number en">03</div>
+            </div>
+
+            <div class="content-title">
+                <h2 class="en">SAUNA RESERVATION</h2>
+            </div>
+
+            <!-- Reservation Steps -->
+            <div class="reservation-steps">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">予約ページへ</h3>
+                        <p class="step-description jp">RESERVATIONボタンから予約ページにアクセスします。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">日時・部屋を選択</h3>
+                        <p class="step-description jp">カレンダーから希望する日付と時間帯を選択し、２つのサウナルームタイプからお選びください。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">情報を入力</h3>
+                        <p class="step-description jp">予約に必要な氏名、連絡先などの情報を入力します。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">内容を確認</h3>
+                        <p class="step-description jp">選択した日時、料金を最終確認します。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">決済</h3>
+                        <p class="step-description jp">予約時にオンラインでの事前クレジットカード決済が行えます。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">予約完了</h3>
+                        <p class="step-description jp">予約完了メールを受信し、準備を整えます。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">07</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">フロント受付（5分前）</h3>
+                        <p class="step-description jp">予約時間の5分前までにホテルフロントにお越しください。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">08</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">規約確認・アメニティ受取</h3>
+                        <p class="step-description jp">フロントスタッフが利用規約をご説明し、タオルやアメニティをお渡しします。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">09</div>
+                    <div class="step-content">
+                        <h3 class="step-title jp">サウナ利用開始</h3>
+                        <p class="step-description jp">心身ともにリラックスして、至福のひとときをお過ごしください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Enjoy Section -->
-    <section id="enjoy" class="section">
+    <section id="enjoy" class="section gray">
         <div class="container">
             <div class="section-header">
                 <div class="section-title">
@@ -560,7 +264,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section gray">
+    <section id="faq" class="section">
         <div class="container">
             <div class="section-header">
                 <div class="section-title">
@@ -572,7 +276,7 @@
                 <div class="section-number en">05</div>
             </div>
 
-            <div style="max-width: 768px; margin: 0 auto;">
+            <div class="faq-container">
                 <div class="faq-item">
                     <h3 class="faq-question jp">予約はどのように行えばよいですか？</h3>
                     <p class="faq-answer jp">こちらのウェブサイトからRESERVATIONへ進みご予約を受け付けております。</p>
@@ -596,23 +300,23 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="margin-bottom: 32px;">
-                <div class="logo en" style="font-size: 14px; margin-bottom: 32px;">
+            <div class="footer-logo">
+                <div class="logo en">
                     SAUNA ROOM<br>
                     (BASE LAYER HOTEL)
                 </div>
             </div>
 
             <div class="footer-content">
-                <div>
-                    <div style="margin-bottom: 24px;">
+                <div class="footer-info">
+                    <div class="footer-section">
                         <h4>ADDRESS</h4>
                         <p>2F 2-6-30 NISHIKI, NAKA-KU, NAGOYA, AICHI 460-0003</p>
                     </div>
-                    <div>
+                    <div class="footer-section">
                         <h4>ACCESS</h4>
                         <p>2 MINUTES WALK FROM EXIT<br>5 OF MARUNOUCHI STATION ON THE SUBWAY</p>
-                        <p style="margin-top: 8px;">4 MINUTES WALK FROM EXIT<br>1 OF FUSHIMI STATION,<br>5 MINUTES BY TAXI FROM NAGOYA STATION</p>
+                        <p>4 MINUTES WALK FROM EXIT<br>1 OF FUSHIMI STATION,<br>5 MINUTES BY TAXI FROM NAGOYA STATION</p>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -630,37 +334,6 @@
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Show/hide floating reservation button on scroll
-        window.addEventListener('scroll', function() {
-            const floatingBtn = document.querySelector('.floating-reservation');
-            if (window.scrollY > 300) {
-                floatingBtn.style.opacity = '1';
-                floatingBtn.style.transform = 'translateY(0)';
-            } else {
-                floatingBtn.style.opacity = '0';
-                floatingBtn.style.transform = 'translateY(20px)';
-            }
-        });
-
-        // Initialize floating button state
-        document.querySelector('.floating-reservation').style.transition = 'opacity 0.3s, transform 0.3s';
-        document.querySelector('.floating-reservation').style.opacity = '0';
-        document.querySelector('.floating-reservation').style.transform = 'translateY(20px)';
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

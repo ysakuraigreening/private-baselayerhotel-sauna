@@ -48,11 +48,11 @@ export default function Home() {
   const reservationSteps = [
     {
       title: "予約ページへ",
-      description: "公式サイトのRESERVATIONボタンから予約システムにアクセスします。",
+      description: "RESERVATIONボタンから予約ページにアクセスします。",
     },
     {
       title: "日時・部屋を選択",
-      description: "カレンダーから希望する日付と時間帯を選択し、お好みのサウナルームタイプをお選びください。",
+      description: "カレンダーから希望する日付と時間帯を選択し、２つのサウナルームタイプからお選びください。",
     },
     {
       title: "情報を入力",
@@ -60,15 +60,15 @@ export default function Home() {
     },
     {
       title: "内容を確認",
-      description: "選択した施設、日時、料金を最終確認します。",
+      description: "選択した日時、料金を最終確認します。",
     },
     {
       title: "決済",
-      description: "クレジットカードまたは電子マネーで決済を行います。",
+      description: "予約時にオンラインでの事前クレジットカード決済が行えます。",
     },
     {
       title: "予約完了",
-      description: "予約完了メールを受信し、当日の準備を整えます。",
+      description: "予約完了メールを受信し、準備を整えます。",
     },
     {
       title: "フロント受付（5分前）",
