@@ -452,6 +452,17 @@ body {
   border-bottom: 2px solid #1f2937;
 }
 
+/* アクティブタブにアスタリスクマーカーを追加 */
+.tab-btn.active::before {
+  content: "✱";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #1f2937;
+}
+
 .tab-btn:hover {
   color: #1f2937;
 }
@@ -567,7 +578,7 @@ body {
   line-height: 1.5;
 }
 
-/* Reservation Flow - タイムライン位置を大幅修正 */
+/* Reservation Flow - タイムライン位置をさらに微調整 */
 .reservation-flow {
   max-width: 800px;
   margin: 0 auto;
@@ -575,12 +586,12 @@ body {
 
 .timeline {
   position: relative;
-  padding-left: 48px; /* 大幅に増加 */
+  padding-left: 52px; /* 48pxから52pxに微調整 */
 }
 
 .timeline-line {
   position: absolute;
-  left: 20px; /* 中央に配置 */
+  left: 24px; /* 20pxから24pxに微調整 */
   top: 0;
   width: 2px;
   height: 100%;
@@ -589,7 +600,7 @@ body {
 
 .timeline-progress {
   position: absolute;
-  left: 20px; /* timeline-lineと同じ位置 */
+  left: 24px; /* timeline-lineと同じ位置に調整 */
   top: 0;
   width: 2px;
   height: 0%;
@@ -608,7 +619,7 @@ body {
 
 .step-dot {
   position: absolute;
-  left: -27px; /* timeline-lineの中央に配置 */
+  left: -31px; /* -27pxから-31pxに微調整 */
   top: 8px;
   width: 12px;
   height: 12px;
@@ -655,21 +666,22 @@ body {
 }
 
 .step-description {
-  max-height: 0;
+  max-height: 0; /* 初期状態は閉じた状態 */
   overflow: hidden;
   transition: max-height 0.7s ease, opacity 0.7s ease;
-  opacity: 0;
+  opacity: 0; /* 初期状態は非表示 */
 }
 
 .step-item.active .step-description {
-  max-height: 300px;
+  max-height: 300px; /* アクティブ時に開く */
   opacity: 1;
 }
 
-.step-item:nth-child(-n + 3) .step-description {
+/* 最初の3つのステップの初期表示を削除 */
+/* .step-item:nth-child(-n + 3) .step-description {
   max-height: 300px;
   opacity: 1;
-}
+} */
 
 .step-description p {
   background: linear-gradient(to right, #f9fafb, #f3f4f6);
@@ -686,8 +698,8 @@ body {
 /* Enjoy Steps - 構造を修正 */
 .enjoy-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 64px;
+  grid-template-columns: repeat(4, 1fr); /* 4列固定 */
+  gap: 32px; /* 64pxから32pxに縮小 */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -991,8 +1003,8 @@ img {
   }
 
   .enjoy-steps {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr); /* モバイルでは2列 */
+    gap: 24px;
   }
 
   .footer-content {
@@ -1040,16 +1052,16 @@ img {
   }
 
   .timeline {
-    padding-left: 40px;
+    padding-left: 44px; /* 40pxから44pxに調整 */
   }
 
   .timeline-line,
   .timeline-progress {
-    left: 16px;
+    left: 20px; /* 16pxから20pxに調整 */
   }
 
   .step-dot {
-    left: -23px;
+    left: -27px; /* -23pxから-27pxに調整 */
   }
 
   .gallery-item {
@@ -1101,16 +1113,16 @@ img {
   }
 
   .timeline {
-    padding-left: 36px;
+    padding-left: 40px; /* 36pxから40pxに調整 */
   }
 
   .timeline-line,
   .timeline-progress {
-    left: 14px;
+    left: 18px; /* 14pxから18pxに調整 */
   }
 
   .step-dot {
-    left: -21px;
+    left: -25px; /* -21pxから-25pxに調整 */
   }
 
   .step-description p {
@@ -1131,5 +1143,10 @@ img {
 
   .enjoy-description {
     font-size: 12px;
+  }
+
+  .enjoy-steps {
+    grid-template-columns: 1fr; /* 小さい画面では1列 */
+    gap: 32px;
   }
 }
