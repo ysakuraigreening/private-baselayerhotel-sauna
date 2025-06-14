@@ -2,6 +2,70 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script loaded successfully")
 
+  // 画像のフェードイン効果を設定
+  function setupImageFadeIn() {
+    const images = document.querySelectorAll('img[loading="lazy"]')
+
+    images.forEach((img) => {
+      // 画像が既に読み込まれている場合
+      if (img.complete) {
+        img.classList.add("loaded")
+      } else {
+        // 画像読み込み完了時にフェードイン
+        img.addEventListener("load", () => {
+          setTimeout(() => {
+            img.classList.add("loaded")
+          }, 100) // 少し遅延させてスムーズに
+        })
+
+        // エラー時の処理
+        img.addEventListener("error", () => {
+          img.classList.add("loaded") // エラーでも表示
+        })
+      }
+    })
+  }
+
+  // 初期化時に実行
+  setupImageFadeIn()
+
+  // ギャラリーアイテムのホバー効果を強化
+  const galleryItems = document.querySelectorAll(".gallery-item:not(.no-hover)")
+  galleryItems.forEach((item) => {
+    const img = item.querySelector("img")
+    const overlay = item.querySelector(".gallery-overlay")
+
+    item.addEventListener("mouseenter", () => {
+      if (img) {
+        img.style.transition = "opacity 0.6s ease, transform 0.6s ease"
+      }
+    })
+
+    item.addEventListener("mouseleave", () => {
+      if (img) {
+        img.style.transition = "opacity 0.8s ease, transform 0.8s ease"
+      }
+    })
+  })
+
+  // Enjoy Steps のホバー効果を追加
+  const enjoySteps = document.querySelectorAll(".enjoy-step")
+  enjoySteps.forEach((step) => {
+    const img = step.querySelector(".enjoy-image img")
+
+    step.addEventListener("mouseenter", () => {
+      if (img) {
+        img.style.transition = "opacity 0.6s ease, transform 0.6s ease"
+      }
+    })
+
+    step.addEventListener("mouseleave", () => {
+      if (img) {
+        img.style.transition = "opacity 0.8s ease, transform 0.8s ease"
+      }
+    })
+  })
+
   // Smooth scrolling for navigation links
   const navLinks = document.querySelectorAll('a[href^="#"]')
   navLinks.forEach((anchor) => {
